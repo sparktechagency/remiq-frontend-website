@@ -48,39 +48,33 @@ const FormInput = ({
         render={({ field }) =>
           type === "password" ? (
             <Input.Password
-              type={type}
               {...field}
+              type={type}
               size={size}
               placeholder={placeholder}
-              value={value ? value : field.value}
-              className={`
-                ${className}
-           
-              `}
+              className={className}
             />
           ) : (
             <Input
-              type={type}
               {...field}
+              type={type}
               size={size}
               placeholder={placeholder}
-              value={value ? value : field.value}
               addonBefore={prefixSelector ?? null}
-              autoComplete='off'
-              className={`
-                ${className}
-              `}
+              autoComplete="off"
+              className={className}
               disabled={disabled}
             />
           )
         }
       />
+
       <small className='!text-red-500'>
         {typeof errorMessage === "string"
           ? errorMessage
           : typeof errors[name]?.message === "string"
-          ? errors[name]?.message
-          : ""}
+            ? errors[name]?.message
+            : ""}
       </small>
     </>
   );

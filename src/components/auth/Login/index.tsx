@@ -41,18 +41,19 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    try {
-      const res = await userLogin({
-        loginData: data,
-        callbackUrl: callbackUrl || undefined,
-      }).unwrap();
-      if (res?.accessToken) {
-        storeUserInfo({ accessToken: res.accessToken });
-        message.success("Login successful!");
-      }
-    } catch (error) {
-      message.error((error as any)?.data?.message || "Something went wrong");
-    }
+    // try {
+    //   const res = await userLogin({
+    //     loginData: data,
+    //     callbackUrl: callbackUrl || undefined,
+    //   }).unwrap();
+    //   if (res?.accessToken) {
+    //     storeUserInfo({ accessToken: res.accessToken });
+    //     message.success("Login successful!");
+    //   }
+    // } catch (error) {
+    //   message.error((error as any)?.data?.message || "Something went wrong");
+    // }
+    console.log({data})
   };
 
   return (

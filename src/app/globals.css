@@ -1,18 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @layer theme, base, antd, components, utilities;
 @import "tailwindcss";
 /* @import "tailwindcss/theme.css" layer(theme); */
 @import "tailwindcss/utilities.css" layer(utilities);
 
-* {
-  font-family: "Arial", sans-serif;
-  padding: 0;
-  margin: 0;
+:root {
+  --primary: #07121A;
 }
+
 
 html {
   scroll-behavior: smooth;
+} 
+
+.headerSearch .ant-input::placeholder{
+  color: white !important;
 }
-
-
