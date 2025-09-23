@@ -11,7 +11,7 @@ export default function PrimaryLayout({ children }: PrimaryLayoutProps) {
     <>
       <section className="bg-[#07121A]">
         <Header />
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto pl-16 xxl:pl-0">
           <Sidebar />
           {children}
         </div>

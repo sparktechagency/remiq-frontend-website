@@ -107,14 +107,10 @@ const samplePosts = [
 
 export default function Home() {
   return (
-    <>
-      <main className="ml-16 pt-16 ">
         <div className="flex justify-center">
           <div className="w-full max-w-sm">
             <VideoFeed posts={samplePosts} />
           </div>
         </div>
-      </main>
-    </>
   )
 }

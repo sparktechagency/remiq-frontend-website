@@ -26,7 +26,7 @@ export function VideoFeed({ posts }: VideoFeedProps) {
   return (
     <div
       ref={containerRef}
-      className="max-h-[calc(100vh-129px)] overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
+      className="max-h-[calc(100vh-64px)] overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
     >
       {posts.map((post, index) => (
