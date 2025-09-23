@@ -24,6 +24,7 @@ import { BookmarkCheck } from 'lucide-react';
 import UserProfileDrawer from './UserProfileDrawer';
 import { CommentsDrawer } from './CommentsDrawer';
 import { ShareDrawer } from './ShareDrawer';
+import Image from 'next/image';
 
 const { Text, Title, Paragraph } = Typography;
 
@@ -182,17 +183,19 @@ export default function VideoPost({ id, user, content, stats, isActive = false }
                         <video
                             ref={videoRef}
                             src={content.videoUrl}
-                            style={{ width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }}
+                            className="w-full h-full object-cover cursor-pointer"
                             loop
                             muted={isMuted}
                             playsInline
                             onClick={togglePlay}
                         />
                     ) : (
-                        <img
+                        <Image
                             src={content.image || "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=350&h=600&fit=crop"}
                             alt={content.title}
-                            style={{ width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }}
+                            width={350}
+                            height={600}
+                            className="w-full h-full object-contain cursor-pointer"
                             onClick={togglePlay}
                         />
                     )}

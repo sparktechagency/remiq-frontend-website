@@ -107,7 +107,7 @@ const samplePosts = [
 
 export default function Home() {
   return (
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <div className="w-full max-w-sm">
             <VideoFeed posts={samplePosts} />
           </div>

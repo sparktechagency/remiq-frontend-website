@@ -1,5 +1,4 @@
 import { NextConfig } from "next";
-import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   experimental:{
@@ -14,7 +13,14 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
 };
-
 
 export default nextConfig;
