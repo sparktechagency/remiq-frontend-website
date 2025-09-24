@@ -16,11 +16,13 @@
     "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^2.7.0",
     "@types/react-modal-video": "^1.2.3",
+    "@xyflow/react": "^12.8.5",
     "antd": "^5.24.7",
     "axios": "^1.8.4",
     "i18next": "^25.0.2",
     "i18next-http-backend": "^3.0.2",
     "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.544.0",
     "next": "15.3.1",
     "next-i18n-router": "^5.5.1",
     "next-i18next": "^15.4.2",
@@ -35,7 +37,8 @@
     "react-modal-video": "^2.0.2",
     "react-player": "^2.16.0",
     "react-redux": "^9.2.0",
-    "yup": "^1.6.1"
+    "yup": "^1.6.1",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -34,3 +34,4 @@ export type IUser = {
   updatedAt: string;
   __v: number;
 };
+

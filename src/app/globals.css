@@ -4,8 +4,17 @@
 /* @import "tailwindcss/theme.css" layer(theme); */
 @import "tailwindcss/utilities.css" layer(utilities);
 
+:root {
+  --primary: #07121A;
+}
+
+
 html {
   scroll-behavior: smooth;
+} 
+
+.headerSearch .ant-input::placeholder{
+  color: white !important;
 }
 
 @theme {
