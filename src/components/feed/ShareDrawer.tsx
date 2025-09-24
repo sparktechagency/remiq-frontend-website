@@ -15,7 +15,7 @@ interface ShareDrawerProps {
   postTitle: string;
 }
 
-export const ShareDrawer: React.FC<ShareDrawerProps> = ({ isOpen, onClose, postId, postTitle }) => {
+export const ShareDrawer: React.FC<ShareDrawerProps> = ({ isOpen, onClose, postId }) => {
   const shareOptions: ShareOption[] = [
     {
       icon: <CopyOutlined />,
@@ -49,14 +49,37 @@ export const ShareDrawer: React.FC<ShareDrawerProps> = ({ isOpen, onClose, postI
       onClose={onClose}
       open={isOpen}
       height="40vh"
+      styles={{
+        header: {
+          background: '#07121A',
+          color: '#ffffff'
+        },
+        body: {
+          background: '#07121A',
+        },
+        wrapper: {
+          background: '#000000',
+        },
+        mask: {
+          color: '#ffffff'
+        }
+      }}
     >
       <List
         dataSource={shareOptions}
+        style={{ background: '#000000' }}
         renderItem={(option: ShareOption) => (
-          <List.Item onClick={option.action} style={{ cursor: 'pointer' }}>
+          <List.Item 
+            onClick={option.action} 
+            style={{ 
+              cursor: 'pointer',
+              background: '#07121A',
+              color: '#ffffff'
+            }}
+          >
             <List.Item.Meta
               avatar={option.icon}
-              title={option.label}
+              title={<span style={{ color: '#ffffff' }}>{option.label}</span>}
             />
           </List.Item>
         )}
