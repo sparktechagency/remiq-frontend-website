@@ -129,18 +129,18 @@ interface VideoPostProps {
     content: {
         title: string;
         description: string;
-        video?: string;  
+        video?: string;
         image?: string;
         hashtags: string[];
-        videoUrl?:string;
+        videoUrl?: string;
     };
     stats: {
-        likes: string;  
+        likes: string;
         comments: string;
         bookmarks: string;
         shares: string;
     };
-    isActive: boolean;  
+    isActive: boolean;
 }
 
 export default function VideoPost({ id, user, content, stats, isActive = false }: VideoPostProps) {

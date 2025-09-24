@@ -236,11 +236,11 @@ export function VideoFeed() {
   return (
     <div
       ref={containerRef}
-      className="h-[calc(100vh-65px)] overflow-auto snap-y snap-mandatory scrollbar-hide"
+      className="max-h-[calc(100vh-65px)] overflow-auto snap-y snap-mandatory scrollbar-hide"
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
     >
       {posts.map((post, index) => (
-        <div key={post.id} className="h-screen snap-start flex items-center justify-center">
+        <div key={post.id} className="h-[calc(100vh-65px)] snap-center  flex items-center justify-center">
           <VideoPost {...post} isActive={index === currentIndex} />
         </div>
       ))}
