@@ -1,4 +1,4 @@
-import { Drawer, List, message } from 'antd';
+import { Modal, List, message } from 'antd';
 import { CopyOutlined, WechatOutlined, TwitterOutlined, FacebookOutlined } from '@ant-design/icons';
 import { ReactNode } from 'react';
 
@@ -8,14 +8,14 @@ interface ShareOption {
   action: () => void;
 }
 
-interface ShareDrawerProps {
+interface ShareModalProps {
   isOpen: boolean;
   onClose: () => void;
   postId: string;
   postTitle: string;
 }
 
-export const ShareDrawer: React.FC<ShareDrawerProps> = ({ isOpen, onClose, postId }) => {
+export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, postId }) => {
   const shareOptions: ShareOption[] = [
     {
       icon: <CopyOutlined />,
@@ -43,25 +43,28 @@ export const ShareDrawer: React.FC<ShareDrawerProps> = ({ isOpen, onClose, postI
   ];
 
   return (
-    <Drawer
-      title="Share"
-      placement="bottom"
-      onClose={onClose}
+    <Modal
+      title={<span style={{ color: '#ffffff' }}>Share</span>}
       open={isOpen}
-      height="40vh"
+      onCancel={onClose}
+      footer={null}
+      mask
+      width={400}
+      centered
       styles={{
+        body: {
+          background: '#07121A',
+          padding: '24px'
+        },
         header: {
           background: '#07121A',
           color: '#ffffff'
         },
-        body: {
-          background: '#07121A',
-        },
-        wrapper: {
-          background: '#000000',
+        content: {
+          background: '#07121A'
         },
         mask: {
-          color: '#ffffff'
+          background: 'rgba(0, 0, 0, 0.85)'
         }
       }}
     >
@@ -84,6 +87,6 @@ export const ShareDrawer: React.FC<ShareDrawerProps> = ({ isOpen, onClose, postI
           </List.Item>
         )}
       />
-    </Drawer>
+    </Modal>
   );
 };

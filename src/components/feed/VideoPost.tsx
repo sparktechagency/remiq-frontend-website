@@ -23,7 +23,7 @@ import {
 import { BookmarkCheck } from 'lucide-react';
 import UserProfileDrawer from './UserProfileDrawer';
 import { CommentsDrawer } from './CommentsDrawer';
-import { ShareDrawer } from './ShareDrawer';
+import { ShareModal } from './ShareDrawer';
 import Image from 'next/image';
 
 const { Text, Title, Paragraph } = Typography;
@@ -65,6 +65,46 @@ const sampleComments = [
         user: { username: "dj_fresh", avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=face" },
         text: "Watching live! Keep the beats coming! 🎧",
         likes: 3,
+        timestamp: "Live",
+        isLiked: false,
+        viewers: 245,
+        isLive: true
+    },
+    {
+        id: "5",
+        user: { username: "groove_master", avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face" },
+        text: "Love the bass line in this one! 🎸",
+        likes: 7,
+        timestamp: "Live",
+        isLiked: false,
+        viewers: 245,
+        isLive: true
+    },
+    {
+        id: "6",
+        user: { username: "synth_wave", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" },
+        text: "Those synth pads are dreamy ✨",
+        likes: 4,
+        timestamp: "Live",
+        isLiked: false,
+        viewers: 245,
+        isLive: true
+    },
+    {
+        id: "7",
+        user: { username: "rhythm_queen", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" },
+        text: "Can't stop nodding my head to this rhythm! 🎵",
+        likes: 6,
+        timestamp: "Live",
+        isLiked: false,
+        viewers: 245,
+        isLive: true
+    },
+    {
+        id: "8",
+        user: { username: "mix_master", avatar: "https://images.unsplash.com/photo-1507101105822-7472b28e22ac?w=100&h=100&fit=crop&crop=face" },
+        text: "Clean mix! What plugins are you using? 🎚️",
+        likes: 9,
         timestamp: "Live",
         isLiked: false,
         viewers: 245,
@@ -411,7 +451,7 @@ export default function VideoPost({ id, user, content, stats, isActive = false }
                 comments={sampleComments}
             />
 
-            <ShareDrawer
+            <ShareModal
                 isOpen={showShare}
                 onClose={() => setShowShare(false)}
                 postId={id}

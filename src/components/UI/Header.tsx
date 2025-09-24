@@ -2,21 +2,18 @@
 
 import type React from "react"
 
-import { ShoppingCart, Bell, User, SearchIcon } from "lucide-react"
+import { ShoppingCart, Bell, SearchIcon } from "lucide-react"
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 import { Input, } from 'antd';
 import { LoginModal } from "../auth/Login/LoginModal"
 import { SignupModal } from "../auth/Login/SignupModal"
 import { SearchProps } from "antd/es/input"
-import { AudioOutlined } from '@ant-design/icons';
 import { FaRegUserCircle } from "react-icons/fa";
 
 
 export function Header() {
     const [showLogin, setShowLogin] = useState(false)
     const [showSignup, setShowSignup] = useState(false)
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     const handleSwitchToSignup = () => {
         setShowLogin(false)
@@ -32,7 +29,7 @@ export function Header() {
 
 
     return (
-        <div className="sticky top-0 z-50 relative">
+        <div className="sticky top-0 z-50">
             <header className="flex justify-center backdrop-blur-sm border-b border-slate-800 shadow-sm bg-[#122D42]">
                 <div className="w-full max-w-7xl px-4 gap-12 sm:px-6 lg:px-8 h-16 flex items-center relative">
                     {/* Logo */}

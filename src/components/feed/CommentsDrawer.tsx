@@ -1,10 +1,14 @@
 import { useState } from "react";
-import { Avatar, Button, Drawer, List, Space, message, Input } from "antd";
-import { HeartOutlined, HeartFilled, SendOutlined } from "@ant-design/icons";
+import { Avatar, Button, Drawer, List, Space, message } from "antd";
+import {
+  HeartOutlined,
+  HeartFilled,
+  UserOutlined,
+} from "@ant-design/icons";
 import { Typography } from "antd";
+import { IoIosSend } from "react-icons/io";
 
 const { Text } = Typography;
-const { TextArea } = Input;
 
 interface Comment {
   id: string;
@@ -70,10 +74,11 @@ export const CommentsDrawer = ({
   return (
     <Drawer
       title="Comments"
-      placement="right"
+      placement={window.innerWidth <= 768 ? "bottom" : "right"}
       onClose={onClose}
       open={isOpen}
       height="70vh"
+      width={450}
       styles={{
         header: {
           background: "#07121A",
@@ -100,7 +105,7 @@ export const CommentsDrawer = ({
                 style={{
                   cursor: "pointer",
                   background: "#07121A",
-                  color: "#ffffff",
+                  color: "#ffff",
                 }}
                 key={comment.id}
                 actions={[
@@ -111,9 +116,10 @@ export const CommentsDrawer = ({
                       comment.isLiked ? (
                         <HeartFilled style={{ color: "#ff4d4f" }} />
                       ) : (
-                        <HeartOutlined />
+                        <HeartOutlined style={{ color: "#ffffff" }} />
                       )
                     }
+                    className="!text-white"
                     onClick={() => toggleCommentLike(comment.id)}
                   >
                     {comment.likes}
@@ -124,38 +130,56 @@ export const CommentsDrawer = ({
                   avatar={<Avatar src={comment.user.avatar} />}
                   title={
                     <Space>
-                      <Text strong style={{ color: '#ffffff' }}>{comment.user.username}</Text>
-                      <Text type="secondary" style={{ color: '#ffffff' }}>{comment.timestamp}</Text>
+                      <Text strong style={{ color: "#ffffff" }}>
+                        {comment.user.username}
+                      </Text>
+                      <Text type="secondary" style={{ color: "#ffffff" }}>
+                        {comment.timestamp}
+                      </Text>
                     </Space>
                   }
-                  description={<Text style={{ color: '#ffffff' }}>{comment.text}</Text>}
+                  description={
+                    <Text style={{ color: "#ffffff" }}>{comment.text}</Text>
+                  }
                 />
               </List.Item>
             )}
           />
         </div>
 
-        <div style={{ borderTop: "1px solid #f0f0f0", paddingTop: 16 }}>
-          <Space.Compact style={{ width: "100%" }}>
-            <TextArea
-              placeholder="Add a comment..."
-              value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-              rows={2}
-              onPressEnter={(e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-                if (e.shiftKey) return;
+        <div className="flex items-center gap-4 p-2 border-t border-gray-700 bg-[#122D42] rounded-full">
+          {/* Avatar */}
+          <div className="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center">
+            <UserOutlined className="text-2xl text-gray-300" />
+          </div>
+
+          {/* Input */}
+          <textarea
+            placeholder="Add comment..."
+            value={newComment}
+            onChange={(e) => {
+              setNewComment(e.target.value);
+              // Auto adjust height
+              e.target.style.height = 'auto';
+              e.target.style.height = e.target.scrollHeight + 'px';
+            }}
+            rows={1}
+            className="flex-1  text-white placeholder-gray-400 px-4 py-2 rounded-2xl resize-none   focus:outline-none min-h-[40px] max-h-[120px] overflow-y-hidden"
+            onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+              if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
                 handleAddComment();
-              }}
-            />
-            <Button
-              type="primary"
-              icon={<SendOutlined />}
-              onClick={handleAddComment}
-            >
-              Post
-            </Button>
-          </Space.Compact>
+              }
+            }}
+          />
+
+          {/* Send Button */}
+          <button
+            onClick={handleAddComment}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-[#7085FE] hover:bg-[#5a6fe4] transition-colors"
+          >
+            <IoIosSend  className="text-xl text-white" />
+          </button>
         </div>
       </div>
     </Drawer>
