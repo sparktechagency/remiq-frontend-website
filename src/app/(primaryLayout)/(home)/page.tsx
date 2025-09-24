@@ -1,9 +1,9 @@
-import Home from "@/components/home";
+import { VideoFeed } from "@/components/feed";
 
-export default function HomePage() {
+export default function HomeVideoFeedPage() {
   return (
     <>
-      <Home />
+      <VideoFeed />
     </>
   )
 }

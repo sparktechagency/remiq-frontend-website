@@ -13,7 +13,9 @@ export default function PrimaryLayout({ children }: PrimaryLayoutProps) {
         <Header />
         <div className="max-w-7xl mx-auto pl-16 xxl:pl-0">
           <Sidebar />
-          {children}
+          <div className="px-2 md:0">
+            {children}
+          </div>
         </div>
       </section>
     </>

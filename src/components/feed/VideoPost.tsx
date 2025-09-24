@@ -191,7 +191,7 @@ export default function VideoPost({ id, user, content, stats, isActive = false }
                         />
                     ) : (
                         <Image
-                            src={content.image || "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=350&h=600&fit=crop"}
+                            src={content.image || `https://picsum.photos/seed/${Math.random()}/200`}
                             alt={content.title}
                             width={350}
                             height={600}
