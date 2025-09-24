@@ -18,6 +18,8 @@ interface IInput {
   prefixSelector?: ReactNode;
   className?: string;
   required?: boolean;
+  suffix?: ReactNode;
+  prefix?: ReactNode;
 }
 const FormInput = ({
   name,
@@ -30,6 +32,8 @@ const FormInput = ({
   disabled = false,
   required = false,
   className = "!py-2",
+  suffix = null,
+  prefix = null,
 }: IInput) => {
   const {
     control,
@@ -37,7 +41,7 @@ const FormInput = ({
   } = useFormContext();
 
   const errorMessage = getErrorMessageBuPropertyName(errors, name);
-  console.log("Type", type);
+  
   return (
     <>
       <FieldRequireLabel label={label} required={required} />
@@ -57,6 +61,10 @@ const FormInput = ({
                 ${className}
            
               `}
+              suffix={suffix ?? null}
+              prefix={prefix ?? null}
+              autoComplete='off'
+              disabled={disabled}
             />
           ) : (
             <Input
@@ -66,7 +74,10 @@ const FormInput = ({
               placeholder={placeholder}
               value={value ? value : field.value}
               addonBefore={prefixSelector ?? null}
+              suffix={suffix ?? null}
+              prefix={prefix ?? null}
               autoComplete='off'
+              
               className={`
                 ${className}
               `}
