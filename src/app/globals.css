@@ -7,11 +7,11 @@
 @theme {
   --color-primary: #07121A;
   --color-secondary:#122D42;
+  --color-white: #ffffff;
 }
 :root {
   --primary: #07121A;
 }
-
 
 html {
   scroll-behavior: smooth;
