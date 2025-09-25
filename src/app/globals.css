@@ -4,6 +4,10 @@
 /* @import "tailwindcss/theme.css" layer(theme); */
 @import "tailwindcss/utilities.css" layer(utilities);
 
+@theme {
+  --color-primary: #07121A;
+  --color-secondary:#122D42;
+}
 :root {
   --primary: #07121A;
 }
@@ -24,6 +28,7 @@ html {
 .ant-modal-close{
   color: white !important;
 }
+
 * {
   scrollbar-width: none;      /* Firefox */
   -ms-overflow-style: none;   /* IE and Edge */

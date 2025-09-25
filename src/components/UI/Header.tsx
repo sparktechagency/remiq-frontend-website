@@ -30,7 +30,7 @@ export function Header() {
 
     return (
         <div className="sticky top-0 z-50">
-            <header className="flex justify-center backdrop-blur-sm border-b border-slate-800 shadow-sm bg-[#122D42]">
+            <header className="flex justify-center backdrop-blur-sm border-b border-slate-800 shadow-sm bg-secondary">
                 <div className="w-full max-w-7xl px-4 gap-12 sm:px-6 lg:px-8 h-16 flex items-center relative">
                     {/* Logo */}
                     <div className="flex items-center absolute left-4 sm:left-20">

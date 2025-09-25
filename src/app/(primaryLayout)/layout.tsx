@@ -9,7 +9,7 @@ interface PrimaryLayoutProps {
 export default function PrimaryLayout({ children }: PrimaryLayoutProps) {
   return (
     <>
-      <section className="bg-[#07121A]">
+      <section className="bg-primary">
         <Header />
         <div className="max-w-7xl mx-auto pl-16 xxl:pl-0">
           <Sidebar />
