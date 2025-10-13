@@ -27,7 +27,7 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignup }: LoginModalProp
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="w-full max-w-md bg-card rounded-xl p-6">
                 {/* Header */}
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex-center mb-6">
                     <h2 className="text-2xl font-bold text-foreground">Welcome Back</h2>
                     <button onClick={onClose}>
                         <X className="w-5 h-5" />

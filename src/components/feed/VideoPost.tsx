@@ -206,7 +206,7 @@ export default function VideoPost({ id, user, content, stats, isActive = false }
             <Card
                 styles={{ body: { padding: 0 } }}
                 style={{
-                    width: 350,
+                    width: 486,
                     margin: '0 auto',
                     borderRadius: 12,
                     overflow: 'hidden',
@@ -216,7 +216,7 @@ export default function VideoPost({ id, user, content, stats, isActive = false }
                 {/* Main Video/Image Container */}
                 <div style={{
                     position: 'relative',
-                    aspectRatio: '9/16',
+                    aspectRatio: '7/12',
                     background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.5))'
                 }}>
                     {content.videoUrl ? (

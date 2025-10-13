@@ -31,28 +31,30 @@ export function Header() {
     return (
         <div className="sticky top-0 z-50">
             <header className="flex justify-center backdrop-blur-sm border-b border-slate-800 shadow-sm bg-secondary">
-                <div className="w-full max-w-7xl px-4 gap-12 sm:px-6 lg:px-8 h-16 flex items-center relative">
+                <div className="w-full   gap-12 px-4   h-16 flex items-center  justify-between">
                     {/* Logo */}
-                    <div className="flex items-center absolute left-4 sm:left-20">
+                    <div className="flex items-center w-full ">
                         <h1 className="text-xl font-bold text-white tracking-tight hover:text-purple-400 transition-colors cursor-pointer">
                             remiq
                         </h1>
                     </div>
 
                     {/* Search Bar */}
-                    <div className="flex-1 max-w-sm mx-auto pl-20 sm:pl-0">
-                        <Input
-                            placeholder="Search..."
-                            size="large"
-                            prefix={<SearchIcon className="text-gray-100 w-4 h-4" />}
-                            className="headerSearch rounded-full !bg-[#122D42] !text-white"
-                            style={{ width: '100%' }}
-                            onPressEnter={(e) => onSearch((e.target as HTMLInputElement).value)}
-                        />
+                    <div className=" w-full flex-center">
+                        <div className="flex-1 max-w-sm mx-auto ">
+                            <Input
+                                placeholder="Search..."
+                                size="large"
+                                prefix={<SearchIcon className="text-gray-100 w-4 h-4" />}
+                                className="headerSearch rounded-full !bg-[#122D42] !text-white"
+                                style={{ width: '100%' }}
+                                onPressEnter={(e) => onSearch((e.target as HTMLInputElement).value)}
+                            />
+                        </div>
                     </div>
 
                     {/* Right Side Icons */}
-                    <div className="flex items-center gap-3 ml-auto">
+                    <div className="flex items-center justify-end gap-3 ml-auto w-full">
                         <button className="relative p-2 text-slate-400 hover:text-white transition-colors rounded-full hover:bg-slate-800">
                             <ShoppingCart className="w-5 h-5" />
                         </button>
