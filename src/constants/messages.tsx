@@ -1,0 +1,56 @@
+const messages = [
+  {
+    id: 1,
+    text: "Glad you liked it! It's called 'Midnight Pulse.' I can send you the stems if you're ready.",
+    sender: "other",
+    time: "10:38 AM",
+    avatar: "/man.jpg",
+    senderName: "Edward Davidson (Moderator)",
+  },
+  {
+    id: 2,
+    text: "Glad you liked it! It's called 'Midnight Pulse.' I can send you the stems if you're ready.",
+    sender: "user",
+    time: "10:38 AM",
+    status: "read",
+  },
+  {
+    id: 3,
+    text: "Glad you liked it! It's called 'Midnight Pulse.' I can send you the stems if you're ready.",
+    sender: "other",
+    time: "10:38 AM",
+    avatar: "/diverse-woman-portrait.png",
+    senderName: "Savannah Nguyen",
+  },
+  {
+    id: 4,
+    text: "Glad you liked it! It's called 'Midnight Pulse.' I can send you the stems if you're ready.",
+    sender: "user",
+    time: "10:39 AM",
+    status: "read",
+  },
+  {
+    id: 5,
+    text: "Glad you liked it! It's called 'Midnight Pulse.' I can send you the stems if you're ready.",
+    sender: "other",
+    time: "10:39 AM",
+    avatar: "/man.jpg",
+    senderName: "Floyd Miles (moderator)",
+  },
+  {
+    id: 6,
+    text: "Glad you liked it! It's called 'Midnight Pulse.' I can send you the stems if you're ready.",
+    sender: "user",
+    time: "10:39 AM",
+    status: "read",
+  },
+  {
+    id: 7,
+    text: "Glad you liked it! It's called 'Midnight Pulse.' I can send you the stems if you're ready.",
+    sender: "other",
+    time: "10:39 AM",
+    avatar: "/diverse-woman-portrait.png",
+    senderName: "Floyd Miles",
+  },
+];
+export default messages;
