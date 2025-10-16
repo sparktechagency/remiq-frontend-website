@@ -25,7 +25,7 @@ export default function ChatArea({
           isCommunity={isCommunity}
           onInfoClick={() => setProfileDrawerOpen(true)}
         />
-        <MessageList chatId={chatId} />
+        <MessageList chatId={chatId} isCommunity={isCommunity} />
         <MessageInput />
       </div>
 

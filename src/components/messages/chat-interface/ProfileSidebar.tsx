@@ -149,14 +149,14 @@ export default function ProfileSidebar({
               {mediaItems?.map((item) => (
                 <div
                   key={item.id}
-                  className="relative aspect-square bg-[#1A2942] rounded-lg overflow-hidden group cursor-pointer"
+                  className="relative aspect-square bg-[#1A2942] rounded-lg overflow-hidden group cursor-pointer flex items-center justify-center "
                   onClick={() => handleMediaClick(item)}
                 >
                   {item.type === "image" ? (
                     <AntdImage
                       src={item.thumbnail}
                       alt={`Media ${item.id}`}
-                      className="object-cover w-full h-full !m-0"
+                      className="!object-cover !w-full !h-full !m-0 !object-center"
                       preview={{ src: item.src }}
                     />
                   ) : (

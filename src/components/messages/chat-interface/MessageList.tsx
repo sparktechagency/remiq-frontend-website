@@ -3,7 +3,13 @@ import { communityMessages, oneToOneMessages } from "@/constants/messages";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef } from "react";
 
-export default function MessageList({ chatId }: { chatId: string }) {
+export default function MessageList({
+  chatId,
+  isCommunity,
+}: {
+  chatId: string;
+  isCommunity?: boolean;
+}) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const pathname = usePathname();
   console.log(chatId);
@@ -27,7 +33,7 @@ export default function MessageList({ chatId }: { chatId: string }) {
       className="h-[calc(100vh-130px)] overflow-y-auto px-3 lg:px-6 py-3 lg:py-4 pb-16 lg:pb-20 space-y-3 lg:space-y-4 flex flex-col-reverse"
     >
       {currentMessages?.map((message) => (
-        <Message key={message.id} message={message} />
+        <Message key={message.id} message={message} isCommunity={isCommunity} />
       ))}
     </div>
   );
