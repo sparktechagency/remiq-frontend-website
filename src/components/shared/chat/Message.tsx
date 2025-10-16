@@ -13,11 +13,15 @@ import { CheckOutlined } from "@ant-design/icons";
 //   };
 // }
 
-export default function Message({ message }: any) {
+export default function Message({ message, isCommunity = false }: any) {
   const isUser = message.sender === "user";
 
   return (
-    <div className={`flex gap-2 lg:gap-3 ${isUser ? "flex-row-reverse" : ""}`}>
+    <div
+      className={`flex gap-2 lg:gap-3 items-end ${
+        isUser ? "flex-row-reverse" : ""
+      }`}
+    >
       {!isUser && message.avatar && (
         <Avatar
           src={message.avatar || "/placeholder.svg"}
@@ -30,7 +34,7 @@ export default function Message({ message }: any) {
           isUser ? "items-end" : "items-start"
         } max-w-[75%] lg:max-w-[60%]`}
       >
-        {!isUser && message.senderName && (
+        {!isUser && message.senderName && isCommunity && (
           <span className="text-[10px] lg:text-xs text-gray-400 mb-1">
             {message.senderName}
           </span>

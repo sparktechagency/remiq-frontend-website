@@ -1,11 +1,36 @@
 import { Avatar } from "antd";
 
 const stories = [
-  { id: 1, name: "John", avatar: "/man.jpg" },
-  { id: 2, name: "Savannah", avatar: "/diverse-woman-portrait.png" },
-  { id: 3, name: "Melvin", avatar: "/man.jpg" },
-  { id: 4, name: "Leslie", avatar: "/diverse-woman-portrait.png" },
-  { id: 5, name: "Theresa", avatar: "/diverse-woman-portrait.png" },
+  {
+    id: 1,
+    name: "John",
+    avatar: "https://i.ibb.co.com/gbpp8NZq/Sheikh20180114151515.jpg",
+  },
+  {
+    id: 2,
+    name: "Savannah",
+    avatar: "https://i.ibb.co.com/gbpp8NZq/Sheikh20180114151515.jpg",
+  },
+  {
+    id: 3,
+    name: "Melvin",
+    avatar: "https://i.ibb.co.com/gbpp8NZq/Sheikh20180114151515.jpg",
+  },
+  {
+    id: 4,
+    name: "Leslie",
+    avatar: "https://i.ibb.co.com/gbpp8NZq/Sheikh20180114151515.jpg",
+  },
+  {
+    id: 5,
+    name: "Theresa",
+    avatar: "https://i.ibb.co.com/gbpp8NZq/Sheikh20180114151515.jpg",
+  },
+  {
+    id: 6,
+    name: "Hasina",
+    avatar: "https://i.ibb.co.com/gbpp8NZq/Sheikh20180114151515.jpg",
+  },
 ];
 
 export default function StoryList() {

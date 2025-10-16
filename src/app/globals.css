@@ -39,6 +39,8 @@ html {
 
 .headerSearch .ant-input::placeholder {
   color: white !important;
+  opacity: 0.6 !important;
+  
 }
 
 

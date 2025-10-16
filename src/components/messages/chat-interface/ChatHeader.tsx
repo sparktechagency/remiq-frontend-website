@@ -19,7 +19,7 @@ export default function ChatHeader({
   const user = {
     name: "Marvin McKinney",
     status: "Online",
-    avatar: "/man.jpg",
+    avatar: "https://i.ibb.co.com/v4MYNf8g/IMG-20251014-201029-2.jpg",
     role: isCommunity ? "Edward Davidson (Moderator)" : null,
   };
 
@@ -28,7 +28,11 @@ export default function ChatHeader({
       <div className="flex items-center gap-2 lg:gap-3 min-w-0">
         <Avatar
           src={user.avatar || "/placeholder.svg"}
-          size={window.innerWidth < 1024 ? 36 : 40}
+          size={globalThis.innerWidth < 1024 ? 36 : 40}
+          style={{
+            objectPosition: "cover",
+          }}
+          
         />
         <div className="min-w-0">
           <h2 className="text-sm lg:text-base font-medium text-white truncate">

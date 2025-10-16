@@ -38,7 +38,7 @@ export default function MessageInput() {
               className="!text-gray-400 hover:!text-white !h-8 !w-8"
             />
           }
-          className="!bg-[#1A2942] !text-white !border-none !h-10 lg:!h-12 !rounded-lg !text-sm"
+          className="!bg-[#1A2942] !text-white !border-none !h-10 lg:!h-12 !rounded-lg !text-sm headerSearch"
           style={{
             backgroundColor: "#1A2942",
             color: "#ffffff",

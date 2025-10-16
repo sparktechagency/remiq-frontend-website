@@ -8,7 +8,7 @@ export default function SearchBar() {
     <Input
       placeholder="Search"
       prefix={<SearchOutlined className="text-gray-400" />}
-      className="!bg-[#1A2942] !text-white !border-none !h-10 !rounded-lg"
+      className="!bg-[#1A2942] !text-white !border-none !h-10 !rounded-lg headerSearch"
       style={{
         backgroundColor: "#1A2942",
         color: "#ffffff",

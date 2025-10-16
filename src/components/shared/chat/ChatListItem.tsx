@@ -30,13 +30,16 @@ export default function ChatListItem({
     <Link
       href={href}
       className={`flex items-center gap-2 lg:gap-3 px-3 lg:px-4 py-2.5 lg:py-3 hover:bg-[#1A2942] transition-colors ${
-        isActive
-          ? "border border-[#3D5AFE] rounded-xl"
-          : ""
+        isActive ? "border border-[#3D5AFE] rounded-xl" : ""
       }`}
     >
       <div className="relative flex-shrink-0">
-        <Badge dot={chat.online} color="#52c41a" offset={[-5, 32]}>
+        <Badge
+          dot={chat.online}
+          color="#52c41a"
+          offset={[-5, 32]}
+          style={{ boxShadow: "none" }}
+        >
           <Avatar
             src={chat.avatar || "/placeholder.svg"}
             size={36}
@@ -61,7 +64,11 @@ export default function ChatListItem({
         <Badge
           count={chat.unread}
           className="flex-shrink-0"
-          style={{ backgroundColor: "#7085FE", fontSize: "10px", boxShadow: "none" }}
+          style={{
+            backgroundColor: "#7085FE",
+            fontSize: "10px",
+            boxShadow: "none",
+          }}
         />
       )}
     </Link>
