@@ -2,11 +2,8 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import { useUserLoginMutation } from "@/redux/api/auth";
-import { loginSchema } from "@/schemas/userSchema";
-import { storeUserInfo } from "@/services/auth.service";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Checkbox, Col, message, Row } from "antd";
+// import { useUserLoginMutation } from "@/redux/api/auth"; 
+import { Checkbox, Col, Row } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -37,7 +34,7 @@ const Login = () => {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl");
 
-  const [userLogin, { isLoading }] = useUserLoginMutation();
+  // const [userLogin, { isLoading }] = useUserLoginMutation();
   const [rememberMe, setRememberMe] = useState(false);
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
@@ -115,8 +112,7 @@ const Login = () => {
 
               <div style={{ padding: '1rem' }}>
                 <Form
-                  submitHandler={onSubmit}
-                  resolver={yupResolver(loginSchema)}
+                  submitHandler={onSubmit}      
                 >
                   {loginFields.map((field) => (
                     <div key={field.name} style={{ marginBottom: '1.5rem' }}>
@@ -151,7 +147,7 @@ const Login = () => {
                   </div>
                   <button
                     type="submit"
-                    disabled={isLoading}
+                    // disabled={isLoading} 
                     style={{
                       width: '100%',
                       backgroundColor: '#3B82F6',
@@ -163,7 +159,8 @@ const Login = () => {
                     }}
                     className="hover:bg-blue-600 disabled:opacity-70 disabled:cursor-not-allowed !important"
                   >
-                    {isLoading ? "Logging in..." : "Log In"}
+                    {/* {isLoading ? "Logging in..." : "Log In"}   */} 
+                    Log In
                   </button>
                   <div style={{ position: 'relative', margin: '2rem 0' }}>
                     <div style={{ position: 'absolute', inset: '0', display: 'flex', alignItems: 'center' }}>
@@ -179,7 +176,7 @@ const Login = () => {
               </div>
 
               <p style={{ textAlign: 'center', color: '#9CA3AF' }}>
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <Link
                   href={`/register${callbackUrl ? `?callbackUrl=${callbackUrl}` : ""}`}
                   style={{

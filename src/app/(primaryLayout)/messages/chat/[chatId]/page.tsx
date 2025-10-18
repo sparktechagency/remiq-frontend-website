@@ -1,4 +1,4 @@
-import ChatArea from "@/components/messages/chat-interface";
+import ChatArea from "@/components/primaryLayout/messages/chat-interface";
 import React from "react";
 
 export default async function page({

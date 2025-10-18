@@ -152,17 +152,17 @@ export default function VideoPost({ id, user, content, stats, isActive = false }
     const [showComments, setShowComments] = useState(false);
     const [showShare, setShowShare] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
-    const videoRef = useRef(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
-        if (videoRef.current) {
-            if (isActive && isPlaying) {
-                (videoRef.current as HTMLVideoElement).play();
-            } else {
-                (videoRef.current as HTMLVideoElement).pause();
-            }
+        if (!videoRef.current) return;
+        if (isActive) {
+            videoRef.current.play();
+        } else {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0; // optional: reset
         }
-    }, [isActive, isPlaying]);
+    }, [isActive]);
 
     const togglePlay = () => {
         setIsPlaying(!isPlaying);

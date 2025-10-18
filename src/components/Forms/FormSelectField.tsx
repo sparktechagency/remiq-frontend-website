@@ -1,9 +1,8 @@
 "use client";
-
-import { getErrorMessageBuPropertyName } from "@/utils/schema-validator";
 import { Select } from "antd";
 import { Controller, useFormContext } from "react-hook-form";
 import FieldRequireLabel from "../UI/FieldRequireLabel";
+import { getErrorMessageBuPropertyName } from "@/utils/schema-validator";
 
 type ISelectFieldProps = {
   name: string;

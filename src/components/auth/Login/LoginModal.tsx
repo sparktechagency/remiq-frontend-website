@@ -1,12 +1,9 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
-import { X, Eye, EyeOff } from "lucide-react"
+import { X,  } from "lucide-react"
 import Form from "@/components/Forms/Form"
 import FormInput from "@/components/Forms/FormInput"
-import { useForm } from "react-hook-form"
 
 interface LoginModalProps {
     isOpen: boolean
@@ -15,11 +12,6 @@ interface LoginModalProps {
 }
 
 export function LoginModal({ isOpen, onClose, onSwitchToSignup }: LoginModalProps) {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [showPassword, setShowPassword] = useState(false)
-    const [isLoading, setIsLoading] = useState(false)
-
     if (!isOpen) return null
 
 
@@ -82,7 +74,7 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignup }: LoginModalProp
 
                 {/* Switch to Signup */}
                 <p className="text-center text-muted-foreground text-sm mt-6">
-                    Don't have an account?{" "}
+                    Don&apos;t have an account?
                     <button type="button" onClick={onSwitchToSignup} className="text-primary hover:text-primary/80 font-medium">
                         Sign up
                     </button>
