@@ -1,9 +1,9 @@
-import { Header } from "@/components/UI/Header"
-import Sidebar from "@/components/UI/Sidebar"
-import { ReactNode } from "react"
+import { Header } from "@/components/UI/Header";
+import Sidebar from "@/components/UI/Sidebar";
+import { ReactNode } from "react";
 
 interface PrimaryLayoutProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function PrimaryLayout({ children }: PrimaryLayoutProps) {
@@ -11,13 +11,11 @@ export default function PrimaryLayout({ children }: PrimaryLayoutProps) {
     <>
       <section className="bg-primary">
         <Header />
-        <div className="max-w-7xl mx-auto pl-16 xxl:pl-0">
+        <div className=" mx-auto pl-16 xxl:pl-0 min-h-[calc(100vh-65px)] ">
           <Sidebar />
-          <div className="px-2 md:0">
-            {children}
-          </div>
+          <div className="px-2 ">{children}</div>
         </div>
       </section>
     </>
-  )
+  );
 }
