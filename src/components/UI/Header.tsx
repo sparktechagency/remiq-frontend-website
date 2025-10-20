@@ -7,10 +7,12 @@ import { LoginModal } from "../auth/Login/LoginModal";
 import { SignupModal } from "../auth/Login/SignupModal";
 import { SearchProps } from "antd/es/input";
 import { FaRegUserCircle } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 export function Header() {
   const [showLogin, setShowLogin] = useState(false);
-  const [showSignup, setShowSignup] = useState(false);
+  const [showSignup, setShowSignup] = useState(false); 
+  const router = useRouter();
 
   const handleSwitchToSignup = () => {
     setShowLogin(false);
@@ -60,7 +62,7 @@ export function Header() {
             <button className="relative p-2 text-slate-400 hover:text-white transition-colors rounded-full hover:bg-slate-800">
               <Bell className="w-5 h-5" />
             </button>
-            <button className="p-2 text-slate-400 hover:text-white transition-colors rounded-full hover:bg-slate-800">
+            <button className="p-2 text-slate-400 hover:text-white transition-colors rounded-full hover:bg-slate-800" onClick={()=>router.push("/profile")}>
               <FaRegUserCircle className="w-5 h-5" />
             </button>
           </div>
