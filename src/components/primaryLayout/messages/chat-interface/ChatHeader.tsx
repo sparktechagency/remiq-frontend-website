@@ -17,7 +17,7 @@ export default function ChatHeader({
   console.log(chatId);
   // Mock data - in real app, fetch based on chatId
   const user = {
-    name: "Marvin McKinney",
+    name: isCommunity? "Bangla Community": "Marvin McKinney",
     status: "Online",
     avatar: "https://i.ibb.co.com/v4MYNf8g/IMG-20251014-201029-2.jpg",
     role: isCommunity ? "Edward Davidson (Moderator)" : null,
@@ -32,16 +32,15 @@ export default function ChatHeader({
           style={{
             objectPosition: "cover",
           }}
-          
         />
         <div className="min-w-0">
           <h2 className="text-sm lg:text-base font-medium text-white truncate">
             {user.name}
           </h2>
           <p className="text-xs text-[#7085FE]">{user.status}</p>
-          {user.role && (
+          {/* {user.role && (
             <p className="text-xs text-gray-400 truncate">{user.role}</p>
-          )}
+          )} */}
         </div>
       </div>
       <div className="flex items-center gap-2 lg:hidden">

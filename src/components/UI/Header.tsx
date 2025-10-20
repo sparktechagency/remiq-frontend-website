@@ -1,7 +1,5 @@
 "use client";
-
 import type React from "react";
-
 import { ShoppingCart, Bell, SearchIcon } from "lucide-react";
 import { useState } from "react";
 import { Input } from "antd";
