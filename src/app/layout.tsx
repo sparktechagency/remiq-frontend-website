@@ -2,14 +2,13 @@ import MainLayout from "@/components/Layouts/MainLayout";
 import Providers from "@/lib/Providers";
 import type { Metadata } from "next";
 import "./globals.css";
-import { Poppins } from "next/font/google"; 
+import { Poppins } from "next/font/google";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Remiq",
-  description:
-    "",
+  description: "",
 };
-
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -24,10 +23,10 @@ export default async function RootLayout({
 }>) {
   return (
     <Providers>
-      <html
-        lang='en'
-      >
+      <html lang="en">
         <body className={`${poppins.className} `}>
+          <Toaster position="top-center" duration={2000} />
+
           <MainLayout>{children}</MainLayout>
         </body>
       </html>
