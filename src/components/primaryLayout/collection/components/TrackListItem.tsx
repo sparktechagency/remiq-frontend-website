@@ -5,7 +5,6 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Track } from "@/constants/global";
 import { Play } from "lucide-react";
 import Link from "next/link";
-
 interface TrackListItemProps {
   track: Track;
   onBuy?: (track: Track) => void;

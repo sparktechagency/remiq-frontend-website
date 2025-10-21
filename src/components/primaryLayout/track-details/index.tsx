@@ -1,13 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "antd";
-import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Collection } from "@/constants/global";
 import { CollectionSidebar } from "../collection/shared/CollectionSidebar";
 import { CommentsModal } from "../collection/components/CommentsModal";
 import { LikesModal } from "../collection/components/LikesModal";
 import { mockComments, mockLikes } from "@/constants/collection";
+import SingleTrackPlayer from "./SingleTrackPlayer";
+import { demoTrack } from "@/constants/track";
+import PrimaryButton from "@/components/shared/buttons/PrimaryButton";
+import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
+import { ShoppingCart } from "lucide-react";
 
 interface TrackDetailPageProps {
   collection: Collection;
@@ -18,36 +21,42 @@ export function TrackDetailPage({ collection }: TrackDetailPageProps) {
   const [likesModalOpen, setLikesModalOpen] = useState(false);
 
   return (
-    <div className="px-4 md:px-5 py-8 md:py-12">
+    <div className="px-4 md:px-5 pt-8 2xl:pt-12">
       <div className="flex flex-col md:flex-row gap-8">
         {/* Sidebar */}
         <CollectionSidebar
+        
           collection={collection}
           onComment={() => setCommentsModalOpen(true)}
         />
 
         {/* Main Content */}
-        <div className="flex-1">
+        <div className="flex-1 lg:max-h-[calc(100vh-110px)] lg:overflow-auto">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-slate-100 mb-4">
-              {collection.title}
-            </h2>
+            {/* heading */}
+            <div className="flex flex-col md:flex-row justify-between lg:items-center mb-4 gap-4">
+              <h2 className="text-white/90 text-xl ">Sound Kits</h2>
+              <div className="flex items-center gap-4">
+                {/* Price */}
 
-            {/* Track Info */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-slate-700" />
-              <div>
-                <p className="text-sm font-medium text-slate-100">
-                  {collection.artist}
-                </p>
-                <p className="text-xs text-slate-400">
-                  @{collection.artist.toLowerCase()}
-                </p>
+                <SecondaryButton
+                  icon={<ShoppingCart size={20} />}
+                  size="large"
+                  className="!w-full lg:!h-[50px]"
+                  text="Add to Cart"
+                  mobileTextHidden={true}
+                />
+                <PrimaryButton
+                  size="large"
+                  className="!w-[400px] lg:!h-[50px]"
+                  text={`$${collection.totalPrice}`}
+                />
               </div>
             </div>
 
+            <SingleTrackPlayer track={demoTrack} />
             {/* Description */}
-            <div className="p-4 bg-slate-800/50 rounded-lg border border-slate-700 mb-6">
+            <div className="p-4 bg-slate-800/50 rounded-lg border border-slate-700 my-6">
               <h3 className="text-sm font-semibold text-slate-100 mb-2">
                 Description
               </h3>
@@ -69,7 +78,7 @@ export function TrackDetailPage({ collection }: TrackDetailPageProps) {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-3">
+            {/* <div className="flex gap-3">
               <Button
                 type="primary"
                 size="large"
@@ -78,7 +87,7 @@ export function TrackDetailPage({ collection }: TrackDetailPageProps) {
               >
                 Add to Cart - ${collection.totalPrice}
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

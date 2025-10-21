@@ -36,7 +36,7 @@ export function CollectionPage({ collection }: CollectionPageProps) {
   };
 
   return (
-    <div className="px-4 md:px-5 py-8 md:py-12">
+    <div className="px-4 md:px-5 pt-8 md:pt-12">
       <div className="flex flex-col md:flex-row gap-8">
         {/* Sidebar */}
         <CollectionSidebar
