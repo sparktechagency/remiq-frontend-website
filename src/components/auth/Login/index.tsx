@@ -2,9 +2,9 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import { useUserLoginMutation } from "@/redux/api/auth";
+
 import { loginSchema } from "@/schemas/userSchema";
-import { storeUserInfo } from "@/services/auth.service";
+
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Checkbox, Col, message, Row } from "antd";
 import Image from "next/image";
@@ -89,10 +89,9 @@ const Login = () => {
 
           <button
             type="submit"
-            disabled={isLoading}
             className="w-full bg-blue-500 hover:bg-blue-600 cursor-pointer text-white !py-3 !my-2 rounded-md font-medium transition disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            {isLoading ? "Logging in..." : "Log In"}
+            {true ? "Logging in..." : "Log In"}
           </button>
         </Form>
 
