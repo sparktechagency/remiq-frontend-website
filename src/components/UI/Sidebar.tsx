@@ -5,7 +5,6 @@ import {
   User,
   Upload,
   MessageSquare,
-  Users,
 } from "lucide-react"; // lightweight icons
 import { MdOutlineExplore } from "react-icons/md";
 

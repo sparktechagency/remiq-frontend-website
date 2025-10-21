@@ -3,16 +3,18 @@ import Providers from "@/lib/Providers";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import { Toaster } from "sonner";
+
 export const metadata: Metadata = {
   title: "Remiq",
-  description:
-    "",
+  description: "",
 };
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
+
 
 
 export default async function RootLayout({
@@ -22,10 +24,10 @@ export default async function RootLayout({
 }>) {
   return (
     <Providers>
-      <html
-        lang='en'
-      >
-        <body className={`${poppins.variable}  antialiased `}>
+      <html lang="en">
+        <body className={`${poppins.className} `}>
+          <Toaster position="top-center" duration={2000} />
+
           <MainLayout>{children}</MainLayout>
         </body>
       </html>

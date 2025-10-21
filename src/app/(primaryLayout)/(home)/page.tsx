@@ -1,4 +1,5 @@
-import { VideoFeed } from "@/components/feed";
+import { VideoFeed } from "@/components/primaryLayout/feed";
+
 
 export default function HomeVideoFeedPage() {
   return (

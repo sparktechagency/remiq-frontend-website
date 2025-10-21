@@ -43,7 +43,7 @@ const Login = () => {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl");
 
-  const [userLogin, { isLoading }] = useUserLoginMutation();
+  // const [userLogin, { isLoading }] = useUserLoginMutation();
   const [rememberMe, setRememberMe] = useState(false);
   const router = useRouter()
 
