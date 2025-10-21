@@ -1,15 +1,18 @@
 import React from 'react';
 import ProfileBanner from './ProfileBanner';
+import UserProfileSidebar from './UserProfileSidebar';
+import ProfileDetails from './ProfileDetails/ProfileDetails';
 
 const Profile = () => {
     return (
-        <div className=' grid grid-cols-12 '>
-            <div className=' lg:col-span-2 col-span-0'>
-
+        <div className=' grid grid-cols-12 h-[calc(100vh-70px)] pt-2 items-center gap-x-10 overflow-hidden'>
+            <div className=' lg:col-span-3 col-span-0  bg-[#122D42] h-full'>
+                <UserProfileSidebar />
             </div>
 
-            <div className=' lg:col-span-10 col-span-12 bg-gray-100'>
-               <ProfileBanner />
+            <div className=' lg:col-span-9 col-span-12  h-full '>
+                <ProfileBanner /> 
+                <ProfileDetails />
             </div>
         </div>
     );
