@@ -43,8 +43,32 @@ html {
 
 }
 
+@theme {
+  --color-primary:#07121A;
+  --color-secondary:#122D42;
+  --color-gradient:linear-gradient(to right, #3b82f6, #6366f1);
+}
 
-.ant-drawer-close {
+@layer utilities {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #1F2937 inset !important; /* bg-gray-800 example */
+    -webkit-text-fill-color: #F9FAFB !important; /* text color */
+    transition: background-color 5000s ease-in-out 0s !important;
+  }
+}
+
+
+.otp-input .ant-input {
+  width: 70px !important;   /* increase width */
+  height: 70px !important;  /* increase height */
+  font-size: 2rem !important; /* make text bigger */
+  text-align: center !important;
+  border-radius: 0.5rem; /* optional: rounded corners */
+}
+.ant-drawer-close{
   color: white !important;
 }
 

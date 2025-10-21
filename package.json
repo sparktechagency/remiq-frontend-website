@@ -36,6 +36,8 @@
     "react-intl": "^7.1.11",
     "react-player": "^2.16.1",
     "react-redux": "^9.2.0",
+    "sonner": "^2.0.7",
+    "wavesurfer.js": "^7.11.0",
     "yup": "^1.6.1",
     "zustand": "^5.0.8"
   },
@@ -43,7 +45,7 @@
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20",
+    "@types/node": "^20.19.23",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
