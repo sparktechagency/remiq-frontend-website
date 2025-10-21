@@ -11,7 +11,7 @@ import { Empty } from "antd";
 export default function page() {
   return (
     <div className="flex flex-col items-center justify-center h-full py-32">
-      <Empty description="Select a chat from the sidebar to start messaging." />
+      <Empty description="Select a chat from the sidebar to start messaging." className="!text-white"/>
     </div>
   );
 }

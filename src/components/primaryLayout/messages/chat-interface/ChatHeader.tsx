@@ -38,7 +38,7 @@ export default function ChatHeader({
       <div className="flex items-center gap-2 lg:gap-2 min-w-0">
         <Button
           shape="circle"
-          className="!bg-transparent !border-none !hover:bg-[#1C274C] flex items-center justify-center !md:hidden"
+          className="!bg-transparent !border-none !hover:bg-[#1C274C] flex items-center justify-center md:!hidden"
           onClick={handleBackRoute}
           aria-label="Back"
         >

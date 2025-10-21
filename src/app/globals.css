@@ -41,12 +41,6 @@ html {
   color: white !important;
   opacity: 0.6 !important;
   
-<<<<<<< HEAD
-}
-
-
-.ant-drawer-close {
-=======
 }
 
 @theme {
@@ -75,7 +69,6 @@ html {
   border-radius: 0.5rem; /* optional: rounded corners */
 }
 .ant-drawer-close{
->>>>>>> eb50882a8bd61561d45f98f2e9d29b07fc96ee5e
   color: white !important;
 }
 
@@ -93,8 +86,4 @@ html {
 *::-webkit-scrollbar {
   display: none;
   /* Chrome, Safari */
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> eb50882a8bd61561d45f98f2e9d29b07fc96ee5e
