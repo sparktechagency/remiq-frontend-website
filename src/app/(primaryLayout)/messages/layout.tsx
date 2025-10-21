@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import ChatSidebar from "@/components/primaryLayout/messages/chat-sidebar";
 import { useParams } from "next/navigation";
 import React from "react";
@@ -13,11 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     typeof window !== "undefined" &&
     window.innerWidth < 640
   ) {
-    return (
-      <section className="h-full w-full">
-        {children}
-      </section>
-    );
+    return <section className="h-full w-full">{children}</section>;
   }
 
   return (

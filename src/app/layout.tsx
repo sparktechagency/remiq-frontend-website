@@ -25,7 +25,18 @@ export default async function RootLayout({
     <Providers>
       <html lang="en">
         <body className={`${poppins.className} `}>
-          <Toaster position="top-center" duration={2000} />
+          <Toaster
+            position="top-center"
+            duration={2000}
+            toastOptions={{
+              style: {
+                background: "#07121A",
+                color: "#FFFFFF",
+                fontSize: "14px",
+                border: "1px solid #7085FE",
+              },
+            }}
+          />
 
           <MainLayout>{children}</MainLayout>
         </body>

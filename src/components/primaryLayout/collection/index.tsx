@@ -36,7 +36,7 @@ export function CollectionPage({ collection }: CollectionPageProps) {
   };
 
   return (
-    <div className="px-4 md:px-5 py-8 md:py-12">
+    <div className="px-4 md:px-5 pt-8 2xl:pt-12">
       <div className="flex flex-col md:flex-row gap-8">
         {/* Sidebar */}
         <CollectionSidebar
@@ -48,17 +48,6 @@ export function CollectionPage({ collection }: CollectionPageProps) {
         {/* Main Content */}
         <div className="flex-1">
           <CollectionHeader collection={collection} onBuyAll={handleBuyAll} />
-
-          {/* Description */}
-          <div className="mb-8 p-4 bg-slate-800/50 rounded-lg border border-slate-700">
-            <h3 className="text-sm font-semibold text-slate-100 mb-2">
-              Description
-            </h3>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              {collection.description}
-            </p>
-          </div>
-
           {/* Track List */}
           <TrackList tracks={collection.tracks} onBuyTrack={handleBuyTrack} />
         </div>

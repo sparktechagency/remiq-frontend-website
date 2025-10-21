@@ -16,8 +16,7 @@ export default function ChatSidebar() {
 
   const router = useRouter();
   return (
-    <div className="w-full px-2 py-4  bg-transparent flex flex-col h-[calc(100vh-65px)] border-r pr-2 border-white/30">
-
+    <div className="w-full px-2 py-4  bg-transparent flex flex-col h-[calc(100vh-80px)] overflow-auto border-r pr-2 border-white/30">
       <div className="flex items-center justify-between mb-4 md:hidden">
         <Button
           shape="circle"
@@ -49,11 +48,12 @@ export default function ChatSidebar() {
         </Tooltip>
       </div>
 
-
-
       <div className=" space-y-3 flex  gap-4">
         <SearchBar />
-        <Tooltip title={isCommunity ? "Chats" : "Community"} className="hidden md:block">
+        <Tooltip
+          title={isCommunity ? "Chats" : "Community"}
+          className="hidden md:block"
+        >
           <Link
             href={isCommunity ? "/messages/chat/1" : "/messages/community/1"}
           >

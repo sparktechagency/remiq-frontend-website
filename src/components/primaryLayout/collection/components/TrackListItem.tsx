@@ -5,7 +5,6 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Track } from "@/constants/global";
 import { Play } from "lucide-react";
 import Link from "next/link";
-
 interface TrackListItemProps {
   track: Track;
   onBuy?: (track: Track) => void;
@@ -14,7 +13,7 @@ interface TrackListItemProps {
 export function TrackListItem({ track, onBuy }: TrackListItemProps) {
   return (
     <Link
-      href={`/track/${track.id}`}
+      href={`/beats/${track.id}`}
       className="flex items-center justify-between py-4 px-4 bg-slate-800/50 rounded-lg hover:bg-slate-800 transition-colors border border-slate-700"
     >
       <div className="flex items-center gap-4 flex-1">

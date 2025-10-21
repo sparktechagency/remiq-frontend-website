@@ -1,7 +1,7 @@
 "use client";
 
 import { Modal, Button, Input, ConfigProvider } from "antd";
-import { SendOutlined } from "@ant-design/icons";
+import { HeartOutlined, SendOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { Comment } from "@/constants/global";
 import { UserItem } from "../shared/UserItem";
@@ -40,12 +40,13 @@ export function CommentsModal({
       }}
     >
       <Modal
-        title="Comments"
+        title={<span className="text-white">Comments</span>}
         open={open}
+        centered
         onCancel={onClose}
         footer={null}
         width={600}
-        bodyStyle={{ padding: 0 }}
+        styles={{ body: { padding: 0 } }}
         className="comments-modal"
       >
         <div className="flex flex-col h-96">
@@ -63,7 +64,7 @@ export function CommentsModal({
                 >
                   <UserItem
                     name={comment.author}
-                    handle={comment.author.toLowerCase()}
+                    // handle={comment.author.toLowerCase()}
                     avatar={comment.avatar}
                     action={
                       <span className="text-xs text-slate-400">
@@ -71,12 +72,18 @@ export function CommentsModal({
                       </span>
                     }
                   />
-                  <p className="text-sm text-slate-300 mt-2 ml-14">
+                  <p className="text-sm text-slate-300 -mt-1 ml-13">
                     {comment.text}
                   </p>
-                  <button className="text-xs text-blue-400 mt-2 ml-14 hover:text-blue-300">
-                    Reply
-                  </button>
+                  <div className="mt-2 ml-13 flex items-center gap-4 text-xs">
+                    <div className="flex items-center gap-1 !text-slate-400 hover:!text-white cursor-pointer">
+                      <HeartOutlined className="" />
+                      <span className="">142</span>
+                    </div>
+                    <button className=" text-blue-400  hover:text-blue-300">
+                      Reply
+                    </button>
+                  </div>
                 </div>
               ))
             )}
@@ -88,7 +95,6 @@ export function CommentsModal({
               <Input
                 placeholder="Add a comment..."
                 value={commentText}
-                
                 onChange={(e) => setCommentText(e.target.value)}
                 onPressEnter={handleAddComment}
                 className="!bg-[#1A2942] !text-white !border-none !rounded-lg !text-sm headerSearch"
