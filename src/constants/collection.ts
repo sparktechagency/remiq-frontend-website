@@ -70,14 +70,14 @@ const mockComments: Comment[] = [
   {
     id: "1",
     author: "Tasha Starks",
-    avatar: "/user-avatar.jpg",
+    avatar: "https://i.ibb.co.com/v4MYNf8g/IMG-20251014-201029-2.jpg",
     text: "Yes, awesome!",
     timestamp: "2h ago",
   },
   {
     id: "2",
     author: "Tasha Starks",
-    avatar: "/user-avatar.jpg",
+    avatar: "https://i.ibb.co.com/3YvJKdsk/polok.jpg",
     text: "Yes, awesome!",
     timestamp: "2h ago",
   },
