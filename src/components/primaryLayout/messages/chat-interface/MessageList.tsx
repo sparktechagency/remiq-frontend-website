@@ -30,7 +30,7 @@ export default function MessageList({
   return (
     <div
       ref={containerRef}
-      className="h-[calc(100vh-130px)] overflow-y-auto px-3 lg:px-6 py-3 lg:py-4 pb-16 lg:pb-20 space-y-3 lg:space-y-4 flex flex-col-reverse"
+      className="h-[calc(100vh-130px)]  overflow-y-auto px-3 lg:px-6 py-3 lg:py-4 pb-26 lg:pb-16 space-y-3 lg:space-y-4 flex flex-col-reverse"
     >
       {currentMessages?.map((message) => (
         <Message key={message.id} message={message} isCommunity={isCommunity} />
