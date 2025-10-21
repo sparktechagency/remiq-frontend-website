@@ -26,6 +26,7 @@ export default async function RootLayout({
       <html lang="en">
         <body className={`${poppins.className} `}>
           <Toaster position="top-center" duration={2000} />
+
           <MainLayout>{children}</MainLayout>
         </body>
       </html>

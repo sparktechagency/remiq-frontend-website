@@ -56,7 +56,7 @@ export default function ChatSidebar() {
         <Tooltip title={isCommunity ? "Chats" : "Community"} className="hidden md:block">
           <Link
             href={isCommunity ? "/messages/chat/1" : "/messages/community/1"}
-            >
+          >
             <Button
               icon={
                 <Users size={20} className="!fill-current !text-[#7085FE]" />

@@ -6,13 +6,16 @@
 
 
 
-import { redirect } from "next/navigation";
+import { Empty } from "antd";
 
 export default function page() {
   return (
-    <h1>Please please form sidebar</h1>
-  )
+    <div className="flex flex-col items-center justify-center h-full py-32">
+      <Empty description="Select a chat from the sidebar to start messaging." />
+    </div>
+  );
 }
+
 
 
 

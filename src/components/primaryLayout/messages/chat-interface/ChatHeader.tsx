@@ -1,7 +1,7 @@
 "use client";
 
 import { Avatar, Button } from "antd";
-import { MoreOutlined, InfoCircleOutlined } from "@ant-design/icons";
+import { InfoCircleOutlined } from "@ant-design/icons";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -29,7 +29,7 @@ export default function ChatHeader({
 
   const handleBackRoute = () => {
 
-      router.push("/messages");
+    router.push("/messages");
     // }
   }
 
@@ -39,7 +39,7 @@ export default function ChatHeader({
         <Button
           shape="circle"
           className="!bg-transparent !border-none !hover:bg-[#1C274C] flex items-center justify-center !md:hidden"
-          onClick={handleBackRoute }
+          onClick={handleBackRoute}
           aria-label="Back"
         >
           <span className="sr-only">Back</span>
