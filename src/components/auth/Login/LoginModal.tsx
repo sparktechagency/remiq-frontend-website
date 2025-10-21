@@ -1,12 +1,9 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
-import { X, Eye, EyeOff } from "lucide-react"
+import { X,  } from "lucide-react"
 import Form from "@/components/Forms/Form"
 import FormInput from "@/components/Forms/FormInput"
-import { useForm } from "react-hook-form"
 
 interface LoginModalProps {
     isOpen: boolean
@@ -15,11 +12,6 @@ interface LoginModalProps {
 }
 
 export function LoginModal({ isOpen, onClose, onSwitchToSignup }: LoginModalProps) {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [showPassword, setShowPassword] = useState(false)
-    const [isLoading, setIsLoading] = useState(false)
-
     if (!isOpen) return null
 
 
@@ -27,7 +19,7 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignup }: LoginModalProp
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="w-full max-w-md bg-card rounded-xl p-6">
                 {/* Header */}
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex-center mb-6">
                     <h2 className="text-2xl font-bold text-foreground">Welcome Back</h2>
                     <button onClick={onClose}>
                         <X className="w-5 h-5" />
@@ -82,7 +74,7 @@ export function LoginModal({ isOpen, onClose, onSwitchToSignup }: LoginModalProp
 
                 {/* Switch to Signup */}
                 <p className="text-center text-muted-foreground text-sm mt-6">
-                    Don't have an account?{" "}
+                    Don&apos;t have an account?
                     <button type="button" onClick={onSwitchToSignup} className="text-primary hover:text-primary/80 font-medium">
                         Sign up
                     </button>

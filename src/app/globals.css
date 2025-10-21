@@ -1,34 +1,65 @@
-
 @layer theme, base, antd, components, utilities;
 @import "tailwindcss";
 /* @import "tailwindcss/theme.css" layer(theme); */
 @import "tailwindcss/utilities.css" layer(utilities);
 
+@layer components {
+  .container {
+    @apply mx-auto px-5 max-w-[1280px];
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      @apply max-w-[1286px];
+    }
+  }
+}
+
+@layer utilities {
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  } 
+  
+}
+
+@theme {
+  --color-primary: #07121A;
+  --color-secondary: #122D42;
+  --color-white: #ffffff;
+}
+
 :root {
   --primary: #07121A;
 }
 
-
 html {
   scroll-behavior: smooth;
-} 
+}
 
-.headerSearch .ant-input::placeholder{
+.headerSearch .ant-input::placeholder {
   color: white !important;
+  opacity: 0.6 !important;
+  
 }
 
 
-.ant-drawer-close{
+.ant-drawer-close {
   color: white !important;
 }
-.ant-modal-close{
+
+.ant-modal-close {
   color: white !important;
 }
+
 * {
-  scrollbar-width: none;      /* Firefox */
-  -ms-overflow-style: none;   /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
 }
 
 *::-webkit-scrollbar {
-  display: none;              /* Chrome, Safari */
+  display: none;
+  /* Chrome, Safari */
 }
