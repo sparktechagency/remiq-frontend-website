@@ -45,7 +45,7 @@ const ProfileDetails: React.FC = () => {
       </div>
 
       {/* Tab panels */}
-      <div className="mt-4 pb-5" role="tabpanel">
+      <div className="mt-4 pb-5 overflow-y-auto h-[60vh]" role="tabpanel">
         {active === "beats" && <Beats />}
         {active === "kits" && <SoundKits />}
         {active === "collection" && <Collection />}

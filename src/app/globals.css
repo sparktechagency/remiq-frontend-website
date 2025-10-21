@@ -19,8 +19,8 @@
 
   .flex-center {
     @apply flex justify-center items-center;
-  } 
-  
+  }
+
 }
 
 @theme {
@@ -40,7 +40,7 @@ html {
 .headerSearch .ant-input::placeholder {
   color: white !important;
   opacity: 0.6 !important;
-  
+
 }
 
 
@@ -62,4 +62,19 @@ html {
 *::-webkit-scrollbar {
   display: none;
   /* Chrome, Safari */
+}
+
+.custom-black-modal .ant-modal-content {
+  background: #071023 !important;
+  color: #ffffff !important;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25) !important; 
+  border: 1px solid #3b3b3b !important;
+}
+
+
+
+.ant-input-outlined {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: 1px solid #FFFFFF1A !important;
 }
