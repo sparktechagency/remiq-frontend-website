@@ -74,7 +74,7 @@ export const CommentsDrawer = ({
   return (
     <Drawer
       title="Comments"
-      placement={window.innerWidth <= 768 ? "bottom" : "right"}
+      placement={globalThis.innerWidth <= 768 ? "bottom" : "right"}
       onClose={onClose}
       open={isOpen}
       height="70vh"

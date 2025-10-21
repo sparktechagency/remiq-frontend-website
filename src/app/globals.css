@@ -4,11 +4,6 @@
 /* @import "tailwindcss/theme.css" layer(theme); */
 @import "tailwindcss/utilities.css" layer(utilities);
 
-:root {
-  --primary: #07121A;
-}
-
-
 html {
   scroll-behavior: smooth;
 } 
@@ -41,4 +36,18 @@ html {
   font-size: 2rem !important; /* make text bigger */
   text-align: center !important;
   border-radius: 0.5rem; /* optional: rounded corners */
+}
+.ant-drawer-close{
+  color: white !important;
+}
+.ant-modal-close{
+  color: white !important;
+}
+* {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari */
 }
