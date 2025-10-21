@@ -11,12 +11,17 @@ import { demoTrack } from "@/constants/track";
 import PrimaryButton from "@/components/shared/buttons/PrimaryButton";
 import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
 import { ShoppingCart } from "lucide-react";
+import { toast } from "sonner";
 
 interface TrackDetailPageProps {
   collection: Collection;
+  isBeatsPage?: boolean;
 }
 
-export function TrackDetailPage({ collection }: TrackDetailPageProps) {
+export function TrackDetailPage({
+  collection,
+  isBeatsPage,
+}: TrackDetailPageProps) {
   const [commentsModalOpen, setCommentsModalOpen] = useState(false);
   const [likesModalOpen, setLikesModalOpen] = useState(false);
 
@@ -25,7 +30,6 @@ export function TrackDetailPage({ collection }: TrackDetailPageProps) {
       <div className="flex flex-col md:flex-row gap-8">
         {/* Sidebar */}
         <CollectionSidebar
-        
           collection={collection}
           onComment={() => setCommentsModalOpen(true)}
         />
@@ -35,21 +39,24 @@ export function TrackDetailPage({ collection }: TrackDetailPageProps) {
           <div className="mb-8">
             {/* heading */}
             <div className="flex flex-col md:flex-row justify-between lg:items-center mb-4 gap-4">
-              <h2 className="text-white/90 text-xl ">Sound Kits</h2>
+              <h2 className="text-white/90 text-xl ">
+                {isBeatsPage ? "Beat Details" : "Sound Kit Details"}
+              </h2>
               <div className="flex items-center gap-4">
                 {/* Price */}
 
                 <SecondaryButton
-                  icon={<ShoppingCart size={20} />}
+                  onClick={() => toast.success("Added to cart!")}
+                  icon={<ShoppingCart size={20} className="mt-0.5" />}
                   size="large"
                   className="!w-full lg:!h-[50px]"
-                  text="Add to Cart"
+                  text={`$${collection.totalPrice}`}
                   mobileTextHidden={true}
                 />
                 <PrimaryButton
                   size="large"
                   className="!w-[400px] lg:!h-[50px]"
-                  text={`$${collection.totalPrice}`}
+                  text={`Buy Now`}
                 />
               </div>
             </div>
