@@ -21,7 +21,7 @@ export default function CreateCollectionPage() {
         form={form}
         layout="vertical"
         onFinish={handleSubmit}
-        className="space-y-6"
+        className="space-y-6 custom-form"
       >
         {/* Upload Thumbnail */}
         <Form.Item>
