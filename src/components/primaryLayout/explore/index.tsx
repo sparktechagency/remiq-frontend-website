@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { Row, Col, Button } from "antd";
 import { PlayCircleOutlined } from "@ant-design/icons";
@@ -7,7 +7,7 @@ import { sampleBeats } from "@/constants/explore";
 
 export default function ExploreGrid() {
   return (
-    <div className="!min-h-screen">
+    <div className=" container mx-auto px-4 md:px-5 pt-8 2xl:py-12">
       <h2 className="text-white mb-5 font-semibold">Free Beat Marketplace</h2>
       <Row gutter={[16, 16]}>
         {sampleBeats.map((beat) => (
