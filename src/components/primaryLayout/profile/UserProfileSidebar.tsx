@@ -5,19 +5,37 @@ import { BsPatchCheckFill } from "react-icons/bs";
 import { LucideMessageSquare } from "lucide-react";
 import { avatar, infoItems, socialItems } from "@/constants/profile";
 import Image from "next/image";
+import { FiEdit2 } from "react-icons/fi";
+import EditProfile from "@/components/UI/modal/EditProfile";
+import { IoMdSettings } from "react-icons/io";
 
 const UserProfileSidebar: React.FC = () => {
-
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   return (
-    <aside className="w-full max-w-full px-6 py-8 text-white">
-      <div className="flex flex-col items-center">
+    <aside className="w-full max-w-full px-6 py-8 text-white relative">
+
+      <div className=" flex items-center gap-2 absolute top-4 right-4 ">
+
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className=" p-2 rounded-full bg-white/10 transition-colors"
+        >
+          <FiEdit2 size={18} className="text-white/80" />
+        </button>
+
+        <button  className=" p-2 rounded-full bg-white/10 transition-colors">
+          <IoMdSettings size={20} />
+        </button>
+      </div>
+
+      <div className="flex flex-col items-center pt-4">
         {/* Avatar */}
         <div className="relative mb-4">
           <div className="w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-[#7085FE] to-[#7085FE]">
             <Image
               src={avatar}
-              alt="Profile avatar" 
+              alt="Profile avatar"
               height={112}
               width={112}
               className="w-full h-full rounded-full object-cover border-4 border-[#0f2b36]"
@@ -90,20 +108,27 @@ const UserProfileSidebar: React.FC = () => {
         </ul>
 
         {/* Social Links */}
-        <div className="mt-5 flex items-center gap-3">
-          {socialItems.map(({ key, icon: Icon, bg, href }) => (
+        <div className="mt-5 flex items-center justify-start gap-3">
+          {socialItems.map(({ key, imgUrl, href }: { key: string, imgUrl: string, href: string }) => (
             <a
               key={key}
               href={href}
               target="_blank"
               rel="noreferrer"
-              className={`${bg} w-7 h-7 rounded-sm flex items-center justify-center hover:opacity-80 transition-opacity`}
+              className="w-7 h-7 flex items-center justify-center"
             >
-              <Icon size={12} className="text-white" />
+              <Image
+                src={imgUrl}
+                alt={`${key} social link`}
+                width={20}
+                height={20}
+                className="rounded object-contain"
+              />
             </a>
           ))}
         </div>
       </div>
+      <EditProfile isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
     </aside>
   );
 };
