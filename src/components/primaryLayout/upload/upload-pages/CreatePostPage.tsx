@@ -62,7 +62,7 @@ export default function CreatePostPage() {
         >
           <Input
             placeholder="Add Title"
-            className="!text-white placeholder-white !h-10 bg-transparent"
+            className="!text-white !placeholder-white !h-10 bg-transparent"
           />
         </Form.Item>
 
