@@ -6,11 +6,18 @@ import { LucideMessageSquare } from "lucide-react";
 import { avatar, infoItems, socialItems } from "@/constants/profile";
 import Image from "next/image";
 import { FiEdit2 } from "react-icons/fi";
-import EditProfile from "@/components/UI/modal/EditProfile";
 import { IoMdSettings } from "react-icons/io";
+import EditProfile from "@/components/UI/modal/profile/EditProfile";
+import Setting from "@/components/UI/modal/profile/Setting";
+import Followers from "@/components/UI/modal/profile/Followers";
+import Preference from "@/components/UI/modal/profile/Preference";
 
 const UserProfileSidebar: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = React.useState(false);
+  const [isFollowing, setIsFollowing] = React.useState(false);
+  const [type, setType] = React.useState('followers')
+  const [isPreferenceOpen, setIsPreferenceOpen] = React.useState(false);
 
   return (
     <aside className="w-full max-w-full px-6 py-8 text-white relative">
@@ -24,7 +31,8 @@ const UserProfileSidebar: React.FC = () => {
           <FiEdit2 size={18} className="text-white/80" />
         </button>
 
-        <button  className=" p-2 rounded-full bg-white/10 transition-colors">
+        <button onClick={() => setIsSettingsOpen(true)}
+          className=" p-2 rounded-full bg-white/10 transition-colors">
           <IoMdSettings size={20} />
         </button>
       </div>
@@ -57,9 +65,9 @@ const UserProfileSidebar: React.FC = () => {
 
         {/* Followers Info */}
         <div className="mt-3 flex items-center gap-3 text-sm text-white/90">
-          <span className="font-medium ">128k Followers</span>
+          <span className="font-medium cursor-pointer " onClick={() => { setIsFollowing(true); setType('followers') }}>128k Followers</span>
           <span className="">•</span>
-          <span className="font-medium ">128k Followings</span>
+          <span className="font-medium cursor-pointer " onClick={() => { setIsFollowing(true); setType('following') }}>128k Followings</span>
         </div>
 
         {/* Bio */}
@@ -115,7 +123,7 @@ const UserProfileSidebar: React.FC = () => {
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="w-7 h-7 flex items-center justify-center"
+              className="w-7 h-7 flex items-center justify-center "
             >
               <Image
                 src={imgUrl}
@@ -129,6 +137,12 @@ const UserProfileSidebar: React.FC = () => {
         </div>
       </div>
       <EditProfile isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
+      <Setting isOpen={isSettingsOpen} setIsOpen={setIsSettingsOpen} setIsPreferenceOpen={setIsPreferenceOpen} />
+
+      {
+        type === 'followers' ? <Followers isOpen={isFollowing} setIsOpen={setIsFollowing} type='followers' /> : <Followers isOpen={isFollowing} setIsOpen={setIsFollowing} type='following' />
+      }
+      <Preference isOpen={isPreferenceOpen} setIsOpen={setIsPreferenceOpen} />
     </aside>
   );
 };

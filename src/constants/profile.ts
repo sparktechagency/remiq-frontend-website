@@ -314,5 +314,166 @@ const collectionData = [
 
 ];
 
+const followers = [
+  {
+    name: "Alice Johnson",
+    username: "@alice_j",
+    status: "Following",
+    relationship: "Following",
+    img: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe"
+  },
+  {
+    name: "Bob Smith",
+    username: "@bob_smith",
+    status: "Following",
+    relationship: "Following",
+    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+  },
+  {
+    name: "Charlie Green",
+    username: "@charlie_g",
+    status: "Following",
+    relationship: "Following",
+    img: "https://images.unsplash.com/photo-1527980965255-d3b416303d12"
+  },
+  {
+    name: "Dana White",
+    username: "@dana_w",
+    status: "Followed",
+    relationship: "Followed",
+    img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
+  },
+  {
+    name: "Eva Black dfdsfdsfs",
+    username: "@eva_black",
+    status: "Followed",
+    relationship: "Followed",
+    img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+  },
+  {
+    name: "Frank White",
+    username: "@frank_white",
+    status: "Followed",
+    relationship: "Followed",
+    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+  },
+  {
+    name: "Grace Blue",
+    username: "@grace_blue",
+    status: "Followed",
+    relationship: "Followed",
+    img: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7"
+  },
+  {
+    name: "Henry Gray",
+    username: "@henry_gray",
+    status: "Followed",
+    relationship: "Followed",
+    img: "https://images.unsplash.com/photo-1527980965255-d3b416303d12"
+  },
+  {
+    name: "Ivy Stone",
+    username: "@ivy_stone",
+    status: "Following",
+    relationship: "Following",
+    img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+  },
+  {
+    name: "Jack Brown",
+    username: "@jack_brown",
+    status: "Following",
+    relationship: "Following",
+    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+  },
+  {
+    name: "Kelly White",
+    username: "@kelly_white",
+    status: "Following",
+    relationship: "Following",
+    img: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe"
+  },
+  {
+    name: "Liam Gray",
+    username: "@liam_gray",
+    status: "Followed",
+    relationship: "Followed",
+    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+  },
+  {
+    name: "Mia Brown",
+    username: "@mia_brown",
+    status: "Followed",
+    relationship: "Followed",
+    img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
+  },
+  {
+    name: "Nina Green",
+    username: "@nina_green",
+    status: "Followed",
+    relationship: "Followed",
+    img: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7"
+  },
+  {
+    name: "Oscar Blue",
+    username: "@oscar_blue",
+    status: "Following",
+    relationship: "Following",
+    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+  }
+]; 
 
-export { avatar, infoItems, socialItems, beatsData, soundKitsData, collectionData };
+const BlockMembers = [
+  {
+    name: "Alice Johnson",
+    username: "@alice_j",
+    status: "Following",
+    relationship: "Following",
+    img: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe"
+  },
+  {
+    name: "Bob Smith",
+    username: "@bob_smith",
+    status: "Following",
+    relationship: "Following",
+    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+  },
+  {
+    name: "Charlie Green",
+    username: "@charlie_g",
+    status: "Following",
+    relationship: "Following",
+    img: "https://images.unsplash.com/photo-1527980965255-d3b416303d12"
+  },
+  {
+    name: "Nina Green",
+    username: "@nina_green",
+    status: "Followed",
+    relationship: "Followed",
+    img: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7"
+  },
+  {
+    name: "Oscar Blue",
+    username: "@oscar_blue",
+    status: "Following",
+    relationship: "Following",
+    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+  }
+];
+
+
+const preferenceStyles = [
+  { id: "drill-beats", title: "Drill Beats" },
+  { id: "hip-hop", title: "Hip Hop" },
+  { id: "trap", title: "Trap" },
+  { id: "acoustic", title: "Acoustic" },
+  { id: "pop", title: "Pop" },
+  { id: "lo-fi", title: "Lo-fi" },
+  { id: "boom-bap", title: "Boom Bap" },
+  { id: "dancehall", title: "Dancehall" },
+  { id: "k-pop", title: "K-Pop" },
+  { id: "afrobeats", title: "Afrobeats" },
+  { id: "latin-trap", title: "Latin Trap" },
+  { id: "reggaeton", title: "Reggaeton" },
+];
+
+export { avatar, infoItems, socialItems, beatsData, soundKitsData, collectionData, followers , preferenceStyles , BlockMembers };
