@@ -2,12 +2,8 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-<<<<<<< HEAD
 import { loginFields } from "@/constants/auth";
-import { Checkbox, } from "antd";
-=======
 import { Checkbox } from "antd";
->>>>>>> 949ef48a3baa616955ca967aa4c27513d5229571
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
