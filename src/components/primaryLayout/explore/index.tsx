@@ -15,7 +15,6 @@ export default function ExploreGrid() {
           <Link href={`/`} key={beat.id}>
             <div className="relative !rounded-xl overflow-hidden !bg-[#111111] !h-[250px]">
               {/* Thumbnail */}
-              {/* @ts-ignore */}
               <Image
                 src={beat.thumb}
                 alt="beat thumbnail"
