@@ -2,38 +2,17 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
+import { loginFields } from "@/constants/auth";
 import { Checkbox, } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { SubmitHandler } from "react-hook-form";
-import { MdLock, MdOutlineEmail } from "react-icons/md";
 interface FormValues {
   email: string;
   password: string;
 }
-
-const loginFields = [
-  {
-    name: "email",
-    type: "email",
-    placeholder: "Enter your email",
-    label: "Email",
-    className:
-      "!bg-secondary !text-white !w-full !py-4 valid:bg-secondary outline-none placeholder:!text-gray-300 !border-none !mb-2  ",
-    prefix: <MdOutlineEmail size={20} color="#6B7280" />,
-  },
-  {
-    name: "password",
-    type: "password",
-    placeholder: "Enter your password",
-    label: "Password",
-    className:
-      "!bg-secondary !text-white !w-full !py-4 valid:bg-secondary placeholder:!text-gray-300 !border-none !mb-2  ",
-    prefix: <MdLock size={20} color="#6B7280" />,
-  },
-];
 
 const Login = () => {
   const searchParams = useSearchParams();

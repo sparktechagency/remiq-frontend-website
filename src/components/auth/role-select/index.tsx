@@ -1,33 +1,11 @@
 "use client";
-
-import Form from "@/components/Forms/Form";
-import FormInput from "@/components/Forms/FormInput";
-import { useUserLoginMutation } from "@/redux/api/auth";
-import { loginSchema } from "@/schemas/userSchema";
-import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-
-import { SubmitHandler } from "react-hook-form";
-
-interface FormValues {
-  email: string;
-  password: string;
-}
-
-
 const RoleSelect = () => {
-  
-
-  const [userLogin, { isLoading }] = useUserLoginMutation();
-
   const [role,setRole]=useState('')
 
   const onSubmit = async () => {
-    console.log("role",role);
-
-    
+    console.log("role",role);  
   };    
 
   return (
@@ -54,10 +32,10 @@ const RoleSelect = () => {
           <button
             type="submit"
             onClick={onSubmit}
-            disabled={isLoading}
+            // disabled={isLoading}
             className="w-full bg-blue-500 hover:bg-blue-600 cursor-pointer text-white !py-3 !my-2 rounded-md font-medium transition disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            {isLoading ? "Changing..." : "Next"}
+           Next
           </button>
       </div>
     </div>

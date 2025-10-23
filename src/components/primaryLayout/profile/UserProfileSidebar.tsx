@@ -140,7 +140,7 @@ const UserProfileSidebar: React.FC = () => {
       <Setting isOpen={isSettingsOpen} setIsOpen={setIsSettingsOpen} setIsPreferenceOpen={setIsPreferenceOpen} />
 
       {
-        type === 'followers' ? <Followers isOpen={isFollowing} setIsOpen={setIsFollowing} type='followers' /> : <Followers isOpen={isFollowing} setIsOpen={setIsFollowing} type='following' />
+        type === 'following' ? <Followers isOpen={isFollowing} setIsOpen={setIsFollowing} type='followers' /> : <Followers isOpen={isFollowing} setIsOpen={setIsFollowing} type='following' />
       }
       <Preference isOpen={isPreferenceOpen} setIsOpen={setIsPreferenceOpen} />
     </aside>
