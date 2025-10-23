@@ -8,8 +8,8 @@ import Link from "next/link";
 
 export default function ExploreGrid() {
   return (
-    <div className=" container mx-auto px-4 md:px-5 pt-8 2xl:py-12">
-      <h2 className="text-white mb-5 font-semibold">Free Beat Marketplace</h2>
+    <div className=" container mx-auto px-4 md:px-5 py-8 2xl:py-12">
+      <h2 className="text-white lg:mb-10 font-semibold lg:text-2xl mb-6">Free Beat Marketplace</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 w-full gap-4 lg:gap-6">
         {sampleBeats.map((beat) => (
           <Link href={`/`} key={beat.id}>
