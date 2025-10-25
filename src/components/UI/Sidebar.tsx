@@ -1,12 +1,8 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
-import {
-  Home,
-  User,
-  Upload,
-  MessageSquare,
-} from "lucide-react";
+import { Home, User, Upload, MessageSquare } from "lucide-react";
 import { MdOutlineExplore } from "react-icons/md";
+import { hiddenBottomNav } from "@/constants/hiddenPaths";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -19,7 +15,9 @@ export default function Sidebar() {
     { href: "/upload", icon: Upload },
     { href: "/messages", icon: MessageSquare },
   ];
-
+  const bottomHide = hiddenBottomNav.some((prefix) =>
+    pathname.startsWith(prefix)
+  );
   return (
     <>
       {/* Desktop / Large screens: Sidebar on the left */}
@@ -35,9 +33,10 @@ export default function Sidebar() {
                 cursor-pointer
                 w-10 h-10 rounded-lg
                 transition-colors duration-200
-                ${isActive 
-                  ? "text-blue-500 bg-slate-800" 
-                  : "text-gray-400 hover:text-white hover:bg-slate-800/50"
+                ${
+                  isActive
+                    ? "text-blue-500 bg-slate-800"
+                    : "text-gray-400 hover:text-white hover:bg-slate-800/50"
                 }
               `}
               aria-label={`Navigate to ${href}`}
@@ -49,7 +48,11 @@ export default function Sidebar() {
       </aside>
 
       {/* Mobile: Navigation bar at the bottom */}
-      <nav className="fixed bottom-0 left-0 right-0 w-full bg-[#07121A] border-t border-slate-800 flex sm:hidden flex-row items-center justify-around py-1 z-40">
+      <nav
+        className={`${
+          bottomHide ? "hidden" : "fixed"
+        }  bottom-0 left-0 right-0 w-full bg-[#07121A] border-t border-slate-800 flex sm:hidden flex-row items-center justify-around py-1 z-40`}
+      >
         {navItems.map(({ href, icon: Icon }) => {
           const isActive = pathname === href;
           return (
@@ -60,9 +63,10 @@ export default function Sidebar() {
                 flex items-center justify-center
                 w-10 h-10 rounded-lg
                 transition-colors duration-200
-                ${isActive 
-                  ? "text-blue-500 bg-slate-800" 
-                  : "text-gray-400 hover:text-white hover:bg-slate-800/50"
+                ${
+                  isActive
+                    ? "text-blue-500 bg-slate-800"
+                    : "text-gray-400 hover:text-white hover:bg-slate-800/50"
                 }
               `}
               aria-label={`Navigate to ${href}`}

@@ -17,7 +17,7 @@ export default function UploadBeats() {
   };
 
   return (
-    <div className="space-y-6 max-w-3xl mx-auto py-8 px-4 lg:px-5">
+    <div className="space-y-6 max-w-3xl mx-auto py-10 px-4 lg:px-5 ">
       <div>
         <h1 className="text-3xl font-bold text-gray-100">Beats Upload</h1>
       </div>

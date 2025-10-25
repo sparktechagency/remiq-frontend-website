@@ -16,7 +16,7 @@ export default function ChatSidebar() {
 
   const router = useRouter();
   return (
-    <div className="w-full px-2 py-4  bg-transparent flex flex-col h-[calc(100vh-80px)] overflow-auto border-r pr-2 border-white/30">
+    <div className="w-full px-2 py-4  bg-transparent flex flex-col lg:h-[calc(100vh-80px)] lg:overflow-auto border-r pr-2 border-white/30 pb-14 lg:pb-0">
       <div className="flex items-center justify-between mb-4 md:hidden">
         <Button
           shape="circle"

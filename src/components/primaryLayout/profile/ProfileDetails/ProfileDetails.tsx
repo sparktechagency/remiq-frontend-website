@@ -16,14 +16,14 @@ const ProfileDetails: React.FC = () => {
   const [active, setActive] = useState<TabKey>("beats");
 
   return (
-    <div className="w-full h-full mt-6">
+    <div className="w-full h-full mt-6 px-2 lg:px-0 ">
       {/* Tabs */}
       <div
         role="tablist"
         aria-label="Profile sections"
         className="inline-flex rounded-md   text-[#9C9C9C] border-b border-white/10  w-full"
       >
-        {TABS.map((t) => {
+        {TABS?.map((t) => {
           const isActive = t.key === active;
           return (
             <button
@@ -45,7 +45,7 @@ const ProfileDetails: React.FC = () => {
       </div>
 
       {/* Tab panels */}
-      <div className="mt-4 pb-5 overflow-y-auto h-[60vh]" role="tabpanel">
+      <div className="mt-4 pb-16 lg:pb-5 overflow-y-auto h-[calc(100vh-130px)] lg:h-[60vh]  " role="tabpanel">
         {active === "beats" && <Beats />}
         {active === "kits" && <SoundKits />}
         {active === "collection" && <Collection />}

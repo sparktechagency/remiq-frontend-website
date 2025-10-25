@@ -25,13 +25,15 @@ export default function ChatHeader({
     role: isCommunity ? "Edward Davidson (Moderator)" : null,
   };
 
-  const router = useRouter()
+  const router = useRouter();
 
   const handleBackRoute = () => {
-
-    router.push("/messages");
-    // }
-  }
+    if (chatId) {
+      router.back();
+    } else {
+      router.push("/");
+    }
+  };
 
   return (
     <div className="h-14 lg:h-16 bg-[#0D1B2E] border-b border-[#1A2942] flex items-center justify-between px-4 lg:px-6 flex-shrink-0">

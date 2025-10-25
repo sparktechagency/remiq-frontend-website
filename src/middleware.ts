@@ -29,11 +29,13 @@ const hasRouteAccess = (role: string, pathname: string) => {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const accessToken = (await cookies()).get(authKey)?.value;
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-pathname", request.nextUrl.pathname);
 
   // No token - allow public routes, block protected routes
   if (!accessToken) {
     return isPublicRoute(pathname)
-      ? NextResponse.next()
+      ? NextResponse.next({ request: { headers: requestHeaders } })
       : redirect("/login", request);
   }
 
@@ -57,7 +59,7 @@ export async function middleware(request: NextRequest) {
 
   // Check if user has access to the requested protected route
   if (hasRouteAccess(role, pathname)) {
-    return NextResponse.next();
+    return NextResponse.next({ request: { headers: requestHeaders } });
   }
 
   // No access to requested route - redirect to user's dashboard

@@ -19,7 +19,7 @@ export default function ChatArea({
 
   return (
     <div className="flex h-full w-full">
-      <div className="flex flex-col flex-1 h-full relative">
+      <div className="flex flex-col flex-1 h-full relative ">
         <ChatHeader
           chatId={chatId}
           isCommunity={isCommunity}
