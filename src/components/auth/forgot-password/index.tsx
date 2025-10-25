@@ -2,35 +2,18 @@
 
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
-import { useUserLoginMutation } from "@/redux/api/auth";
-import { forgetPasswordSchema, loginSchema } from "@/schemas/userSchema";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { forgetFields } from "@/constants/auth";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
 import { SubmitHandler } from "react-hook-form";
-import { MdOutlineEmail } from "react-icons/md";
 
 interface FormValues {
   email: string;
   password: string;
 }
 
-const loginFields = [
-  {
-    name: "email",
-    type: "email",
-    placeholder: "Enter your email",
-    label: "Email",
-    className:
-      "!bg-secondary !text-white !w-full !py-4 valid:bg-secondary placeholder:!text-gray-300 !border-none !mb-4  ",
-    prefix: <MdOutlineEmail size={20} color="#6B7280" />,
-  },
-];
-
 const ForgetPassword = () => {
-  const [userLogin, { isLoading }] = useUserLoginMutation();
   const router = useRouter();
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
@@ -55,8 +38,8 @@ const ForgetPassword = () => {
           Forgot Password
         </h2>
 
-        <Form submitHandler={onSubmit} resolver={yupResolver(forgetPasswordSchema)}>
-          {loginFields.map((field) => (
+        <Form submitHandler={onSubmit} >
+          {forgetFields.map((field) => (
             <div key={field.name} className="mb-4">
               <FormInput {...field} />
             </div>
@@ -64,15 +47,15 @@ const ForgetPassword = () => {
 
           <button
             type="submit"
-            disabled={isLoading}
+            // disabled={isLoading} 
             className="w-full bg-blue-500 hover:bg-blue-600 cursor-pointer text-white !py-3 !my-2 rounded-md font-medium transition disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            {isLoading ? "Sending..." : "Sent OTP"}
+           Sent OTP
           </button>
         </Form>
 
         <p className="text-center text-gray-400 !mt-10 text-xs md:text-sm ">
-          Didn't get OTP?{" "}
+          Didn&apos;t get OTP?
           <Link
             href="/auth/forget-password"
             className="text-blue-400 underline font-medium"

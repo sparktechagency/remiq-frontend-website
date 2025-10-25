@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Button, message } from "antd";
+import { message } from "antd";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -11,7 +11,6 @@ interface OTPVerificationProps {
 }
 
 const OTPVerification: React.FC<OTPVerificationProps> = ({
-  onVerify,
   onResend,
   loading = false,
 }) => {
@@ -69,8 +68,6 @@ const OTPVerification: React.FC<OTPVerificationProps> = ({
   const router = useRouter();
   // Handle verify button click
   const handleVerify = () => {
-    const otpString = otp.join("");
-
     router.push("/reset-password");
   };
 
@@ -95,8 +92,6 @@ const OTPVerification: React.FC<OTPVerificationProps> = ({
       .toString()
       .padStart(2, "0")}`;
   };
-
-  const isVerifyDisabled = otp.some((digit) => !digit) || loading;
 
   return (
     <div  className="min-h-screen bg-primary flex items-center justify-center p-5">

@@ -96,10 +96,14 @@ html {
   background: transparent !important;
   border: 1px solid #ffffff1a !important;
 /* height: 48px !important; */
+} 
+
+.ant-input::placeholder {
+  color: #6B7280 !important;
 }
 
 .custom-form .ant-form-item .ant-form-item-label > label {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(252, 246, 246, 0.8) !important;
 }
 
 .custom-form

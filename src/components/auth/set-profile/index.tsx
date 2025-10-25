@@ -1,27 +1,10 @@
 "use client";
-
-import Form from "@/components/Forms/Form";
-import FormInput from "@/components/Forms/FormInput";
-import { useUserLoginMutation } from "@/redux/api/auth";
-import { forgetPasswordSchema, loginSchema } from "@/schemas/userSchema";
-import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-
-import { SubmitHandler } from "react-hook-form";
-import { MdOutlineEmail } from "react-icons/md";
 import { GoPlus } from "react-icons/go";
 import { ChangeEvent, useState } from "react";
-interface FormValues {
-  email: string;
-  password: string;
-}
-
-
 
 const ForgetPassword = () => {
-  const [userLogin, { isLoading }] = useUserLoginMutation();
   const [image, setImage] = useState('');
   const router = useRouter();
 
@@ -30,17 +13,12 @@ const ForgetPassword = () => {
 
     const url = URL.createObjectURL(file!);
     setImage(url);
-
-    
+  
   };
 
   function onSubmit() {
     router.push("/subscription");
   }
-
-  
-
-
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-primary !px-4">
@@ -65,21 +43,20 @@ const ForgetPassword = () => {
 
           <button
             type="submit"
-            disabled={isLoading}
+            // disabled={isLoading}
             onClick={onSubmit}
             className="w-full bg-blue-500  hover:bg-blue-600 cursor-pointer text-white !py-3 !my-2 rounded-md font-medium transition disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            {isLoading ? "Saving..." : "Next"}
+          Next
           </button>
           <button
             type="submit"
             onClick={onSubmit}
-            disabled={isLoading}
+            // disabled={isLoading}
             className="w-full border border-blue-500 hover:bg-blue-600 cursor-pointer text-white !py-3 !my-2 rounded-md font-medium transition disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            {isLoading ? "Saving..." : "Skip"}
+           Skip
           </button>
-
       </div>
     </div>
   );

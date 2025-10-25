@@ -14,6 +14,8 @@ import { useRouter } from 'next/navigation';
 import PasswordSecurity from './PasswordSecurity';
 import ChangePassword from './ChangePassword';
 import DeleteAccount from './DeleteAccount';
+import BlockMember from './BlockMember';
+import HelpSupport from './HelpSupport';
 
 type Props = {
     isOpen: boolean;
@@ -26,15 +28,17 @@ const Setting: React.FC<Props> = ({ isOpen, setIsOpen, setIsPreferenceOpen }) =>
     const router = useRouter();
     const [isPassword, setIsPassword] = React.useState(false);   
     const [isChangePassword, setIsChangePassword] = React.useState(false); 
-    const [isDeleteAccount, setIsDeleteAccount] = React.useState(false);
+    const [isDeleteAccount, setIsDeleteAccount] = React.useState(false);  
+    const [isBlocked, setIsBlocked] = React.useState(false); 
+    const [isHelp, setIsHelp] = React.useState(false);
 
     const items = [
         { key: "preference", label: "Preference", icon: FiStar, onClick: () => { setIsOpen(false); setIsPreferenceOpen(true) } },
         { key: "bookmarks", label: "Bookmarks", icon: FiBookmark, onClick: () => { setIsOpen(false); router.push("/bookmark") } },
         { key: "password", label: "Password & Security", icon: FiShield, onClick: () => { setIsOpen(false); setIsPassword(true) } },
-        { key: "blocked", label: "Blocked Member", icon: FiSlash, onClick: () => console.log("blocked") },
-        { key: "help", label: "Help & Support", icon: FiHelpCircle, onClick: () => console.log("help") },
-        { key: "logout", label: "Log Out", icon: FiLogOut, onClick: () => console.log("logout"), danger: true },
+        { key: "blocked", label: "Blocked Member", icon: FiSlash, onClick: () => { setIsOpen(false); setIsBlocked(true) } },
+        { key: "help", label: "Help & Support", icon: FiHelpCircle, onClick: () =>{ setIsOpen(false); setIsHelp(true) } },
+        { key: "logout", label: "Log Out", icon: FiLogOut, onClick: () => { setIsOpen(false); router.push("/login") }, danger: true },
     ];
     return (
         <div>
@@ -94,7 +98,9 @@ const Setting: React.FC<Props> = ({ isOpen, setIsOpen, setIsPreferenceOpen }) =>
             </Modal>
             <PasswordSecurity isOpen={isPassword} setIsOpen={setIsPassword} setIsChangePassword={setIsChangePassword} setIsDeleteAccount={setIsDeleteAccount} /> 
             <ChangePassword isOpen={isChangePassword} setIsOpen={setIsChangePassword} /> 
-            <DeleteAccount isOpen={isDeleteAccount} setIsOpen={setIsDeleteAccount} />
+            <DeleteAccount isOpen={isDeleteAccount} setIsOpen={setIsDeleteAccount} /> 
+            <BlockMember isOpen={isBlocked} setIsOpen={setIsBlocked} /> 
+            <HelpSupport isOpen={isHelp} setIsOpen={setIsHelp} />
         </div>
     );
 };

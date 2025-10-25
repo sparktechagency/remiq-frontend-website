@@ -26,7 +26,7 @@ const Followers = ({ isOpen, setIsOpen, type = 'followers' }: FollowersProps) =>
             width={400}
             className="custom-black-modal"
         > 
-        <p className=' text-xl font-medium '>{type === "followers" ? "Followers" : "Following"}</p>
+        <p className=' text-xl font-medium '>{type === "followers" ? "Following" : "Followers"}</p>
             <div className="py-4">
                 <Input
                     prefix={<FiSearch className="text-slate-500" />}

@@ -1,29 +1,14 @@
 "use client";
 import type React from "react";
 import { ShoppingCart, Bell, SearchIcon } from "lucide-react";
-import { useState } from "react";
 import { Input } from "antd";
-import { LoginModal } from "../auth/Login/LoginModal";
-import { SignupModal } from "../auth/Login/SignupModal";
 import { SearchProps } from "antd/es/input";
 import { FaRegUserCircle } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export function Header() {
-  const [showLogin, setShowLogin] = useState(false);
-  const [showSignup, setShowSignup] = useState(false);
   const router = useRouter();
-
-  const handleSwitchToSignup = () => {
-    setShowLogin(false);
-    setShowSignup(true);
-  };
-
-  const handleSwitchToLogin = () => {
-    setShowSignup(false);
-    setShowLogin(true);
-  };
 
   const onSearch: SearchProps["onSearch"] = (value, _e, info) =>
     console.log(info?.source, value);
@@ -75,18 +60,6 @@ export function Header() {
           </div>
         </div>
       </header>
-
-      {/* Auth Modals */}
-      <LoginModal
-        isOpen={showLogin}
-        onClose={() => setShowLogin(false)}
-        onSwitchToSignup={handleSwitchToSignup}
-      />
-      <SignupModal
-        isOpen={showSignup}
-        onClose={() => setShowSignup(false)}
-        onSwitchToLogin={handleSwitchToLogin}
-      />
     </div>
   );
 }

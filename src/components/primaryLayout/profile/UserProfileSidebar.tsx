@@ -166,7 +166,7 @@ const UserProfileSidebar: React.FC = () => {
         setIsPreferenceOpen={setIsPreferenceOpen}
       />
 
-      {type === "followers" ? (
+      {type === "following" ? (
         <Followers
           isOpen={isFollowing}
           setIsOpen={setIsFollowing}
