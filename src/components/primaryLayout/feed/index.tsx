@@ -40,7 +40,7 @@ export function VideoFeed() {
       className="h-[calc(100vh-65px)] overflow-y-scroll snap-y snap-mandatory scrollbar-hide pb-10 lg:pb-0"
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
     >
-      {posts.map((post, index) => (
+      {posts?.map((post, index) => (
         <div
           key={post.id}
           className="h-[calc(100vh-65px)] snap-center flex items-center justify-center"

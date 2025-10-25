@@ -1,5 +1,49 @@
 const posts = [
   {
+    id: "16",
+    user: {
+      username: "streetvibes",
+      avatar: `https://picsum.photos/seed/${Math.random()}/200`,
+      isFollowing: false,
+    },
+    content: {
+      title: "Urban Energy",
+      description:
+        "The rhythm of the city captured in motion — pure street vibes and hustle energy.",
+      hashtags: ["street", "citylife", "motion"],
+      video:
+        "https://res.cloudinary.com/ds1njqypu/video/upload/v1761391133/Download_oa8t0p.mp4",
+    },
+    stats: {
+      likes: "4.4K",
+      comments: "720",
+      bookmarks: "2.3K",
+      shares: "340",
+    },
+  },
+  {
+    id: "7",
+    user: {
+      username: "fitnessguru",
+      avatar: `https://picsum.photos/seed/${Math.random()}/200`,
+      isFollowing: false,
+    },
+    content: {
+      title: "Morning HIIT Routine",
+      description:
+        "Burn calories fast with this 20-minute high-intensity workout.",
+      hashtags: ["fitness", "hiit", "health"],
+      video:
+        "https://res.cloudinary.com/ds1njqypu/video/upload/v1761390787/video_20251004_100423_edit_yra4m2.mp4",
+    },
+    stats: {
+      likes: "3.9K",
+      comments: "864",
+      bookmarks: "2.2K",
+      shares: "321",
+    },
+  },
+  {
     id: "6",
     user: {
       username: "travelwithsara",
@@ -20,27 +64,7 @@ const posts = [
       shares: "502",
     },
   },
-  {
-    id: "7",
-    user: {
-      username: "fitnessguru",
-      avatar: `https://picsum.photos/seed/${Math.random()}/200`,
-      isFollowing: false,
-    },
-    content: {
-      title: "Morning HIIT Routine",
-      description:
-        "Burn calories fast with this 20-minute high-intensity workout.",
-      hashtags: ["fitness", "hiit", "health"],
-      video: "/videos/hiit-workout.mp4",
-    },
-    stats: {
-      likes: "3.9K",
-      comments: "864",
-      bookmarks: "2.2K",
-      shares: "321",
-    },
-  },
+
   {
     id: "8",
     user: {
@@ -115,7 +139,8 @@ const posts = [
       description:
         "Step-by-step breakdown of designing an immersive role-playing game.",
       hashtags: ["gamedev", "unity", "rpg"],
-      video: "/videos/rpg-dev.mp4",
+      video:
+        "https://res.cloudinary.com/ds1njqypu/video/upload/v1761390787/video_20251004_100423_edit_yra4m2.mp4",
     },
     stats: {
       likes: "5.3K",
@@ -207,6 +232,6 @@ const posts = [
       shares: "890",
     },
   },
-]; 
+];
 
 export { posts };
