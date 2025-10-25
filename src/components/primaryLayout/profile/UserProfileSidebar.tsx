@@ -16,14 +16,12 @@ const UserProfileSidebar: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = React.useState(false);
   const [isFollowing, setIsFollowing] = React.useState(false);
-  const [type, setType] = React.useState('followers')
+  const [type, setType] = React.useState("followers");
   const [isPreferenceOpen, setIsPreferenceOpen] = React.useState(false);
 
   return (
     <aside className="w-full max-w-full px-6 py-8 text-white relative">
-
       <div className=" flex items-center gap-2 absolute top-4 right-4 ">
-
         <button
           onClick={() => setIsModalOpen(true)}
           className=" p-2 rounded-full bg-white/10 transition-colors"
@@ -31,8 +29,10 @@ const UserProfileSidebar: React.FC = () => {
           <FiEdit2 size={18} className="text-white/80" />
         </button>
 
-        <button onClick={() => setIsSettingsOpen(true)}
-          className=" p-2 rounded-full bg-white/10 transition-colors">
+        <button
+          onClick={() => setIsSettingsOpen(true)}
+          className=" p-2 rounded-full bg-white/10 transition-colors"
+        >
           <IoMdSettings size={20} />
         </button>
       </div>
@@ -54,10 +54,7 @@ const UserProfileSidebar: React.FC = () => {
         {/* Name + Verified Badge */}
         <h2 className="flex items-center gap-2 text-xl font-semibold">
           Steave Ani
-          <span
-            title="Verified"
-            className="  text-[#3b82f6]"
-          >
+          <span title="Verified" className="  text-[#3b82f6]">
             <BsPatchCheckFill size={20} />
           </span>
         </h2>
@@ -65,9 +62,25 @@ const UserProfileSidebar: React.FC = () => {
 
         {/* Followers Info */}
         <div className="mt-3 flex items-center gap-3 text-sm text-white/90">
-          <span className="font-medium cursor-pointer " onClick={() => { setIsFollowing(true); setType('followers') }}>128k Followers</span>
+          <span
+            className="font-medium cursor-pointer "
+            onClick={() => {
+              setIsFollowing(true);
+              setType("followers");
+            }}
+          >
+            128k Followers
+          </span>
           <span className="">•</span>
-          <span className="font-medium cursor-pointer " onClick={() => { setIsFollowing(true); setType('following') }}>128k Followings</span>
+          <span
+            className="font-medium cursor-pointer "
+            onClick={() => {
+              setIsFollowing(true);
+              setType("following");
+            }}
+          >
+            128k Followings
+          </span>
         </div>
 
         {/* Bio */}
@@ -77,7 +90,7 @@ const UserProfileSidebar: React.FC = () => {
         </p>
 
         {/* Buttons */}
-        <div className="mt-5 w-full space-y-3">
+        <div className="mt-5 w-full flex flex-row lg:flex-col gap-3">
           <button className="w-full rounded-md bg-[#7085FE] py-2 font-medium text-white hover:bg-[#7085FE] transition-colors">
             + Follow
           </button>
@@ -117,31 +130,55 @@ const UserProfileSidebar: React.FC = () => {
 
         {/* Social Links */}
         <div className="mt-5 flex items-center justify-start gap-3">
-          {socialItems.map(({ key, imgUrl, href }: { key: string, imgUrl: string, href: string }) => (
-            <a
-              key={key}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              className="w-7 h-7 flex items-center justify-center "
-            >
-              <Image
-                src={imgUrl}
-                alt={`${key} social link`}
-                width={20}
-                height={20}
-                className="rounded object-contain"
-              />
-            </a>
-          ))}
+          {socialItems.map(
+            ({
+              key,
+              imgUrl,
+              href,
+            }: {
+              key: string;
+              imgUrl: string;
+              href: string;
+            }) => (
+              <a
+                key={key}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="w-7 h-7 flex items-center justify-center "
+              >
+                <Image
+                  src={imgUrl}
+                  alt={`${key} social link`}
+                  width={20}
+                  height={20}
+                  className="rounded object-contain"
+                />
+              </a>
+            )
+          )}
         </div>
       </div>
       <EditProfile isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
-      <Setting isOpen={isSettingsOpen} setIsOpen={setIsSettingsOpen} setIsPreferenceOpen={setIsPreferenceOpen} />
+      <Setting
+        isOpen={isSettingsOpen}
+        setIsOpen={setIsSettingsOpen}
+        setIsPreferenceOpen={setIsPreferenceOpen}
+      />
 
-      {
-        type === 'followers' ? <Followers isOpen={isFollowing} setIsOpen={setIsFollowing} type='followers' /> : <Followers isOpen={isFollowing} setIsOpen={setIsFollowing} type='following' />
-      }
+      {type === "followers" ? (
+        <Followers
+          isOpen={isFollowing}
+          setIsOpen={setIsFollowing}
+          type="followers"
+        />
+      ) : (
+        <Followers
+          isOpen={isFollowing}
+          setIsOpen={setIsFollowing}
+          type="following"
+        />
+      )}
       <Preference isOpen={isPreferenceOpen} setIsOpen={setIsPreferenceOpen} />
     </aside>
   );

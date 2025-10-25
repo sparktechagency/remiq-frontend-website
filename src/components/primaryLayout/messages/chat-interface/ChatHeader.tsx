@@ -29,7 +29,7 @@ export default function ChatHeader({
 
   const handleBackRoute = () => {
 
-    router.push("/messages");
+    router.push("/");
     // }
   }
 

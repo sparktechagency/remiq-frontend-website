@@ -51,7 +51,7 @@ export default function MessageInput() {
   };
 
   return (
-    <div className="absolute bottom-[48px] lg:bottom-0 z-20 w-full bg-primary border-t border-[#1A2942] px-3 lg:px-6 flex flex-col gap-2 py-2 lg:py-3">
+    <div className="absolute bottom-[40px] lg:bottom-0 z-20 w-full bg-primary border-t border-[#1A2942] px-3 lg:px-6 flex flex-col gap-2 py-2 lg:py-3">
       {/* Media preview section (above input) */}
       {previewUrls.length > 0 && (
         <div className="flex flex-wrap items-center gap-2 px-1">
