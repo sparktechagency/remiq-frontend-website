@@ -179,7 +179,6 @@ export default function VideoPost({
   stats,
   isActive = false,
 }: VideoPostProps) {
-  const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -188,17 +187,36 @@ export default function VideoPost({
   const [showShare, setShowShare] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    if (!videoRef.current) return;
+    const video = videoRef.current;
+    if (!video) return;
+
+    // --- Keep state in sync with actual video state
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+
+    video.addEventListener("play", handlePlay);
+    video.addEventListener("pause", handlePause);
+
+    return () => {
+      video.removeEventListener("play", handlePlay);
+      video.removeEventListener("pause", handlePause);
+    };
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
     if (isActive) {
-      videoRef.current.play();
+      video.play();
     } else {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+      video.pause();
+      video.currentTime = 0;
     }
   }, [isActive]);
-
   const togglePlay = () => {
     if (!videoRef.current) return;
     if (isPlaying) {
@@ -256,6 +274,7 @@ export default function VideoPost({
           borderRadius: 12,
           overflow: "hidden",
           boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+          border:"transparent",
         }}
       >
         {/* Main Video/Image Container */}

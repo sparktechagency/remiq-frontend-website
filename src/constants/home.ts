@@ -21,6 +21,7 @@ const posts = [
       shares: "340",
     },
   },
+
   {
     id: "7",
     user: {
@@ -35,6 +36,28 @@ const posts = [
       hashtags: ["fitness", "hiit", "health"],
       video:
         "https://res.cloudinary.com/ds1njqypu/video/upload/v1761390787/video_20251004_100423_edit_yra4m2.mp4",
+    },
+    stats: {
+      likes: "3.9K",
+      comments: "864",
+      bookmarks: "2.2K",
+      shares: "321",
+    },
+  },
+  {
+    id: "45",
+    user: {
+      username: "fitnessguru",
+      avatar: `https://picsum.photos/seed/${Math.random()}/200`,
+      isFollowing: false,
+    },
+    content: {
+      title: "Morning HIIT Routine",
+      description:
+        "Burn calories fast with this 20-minute high-intensity workout.",
+      hashtags: ["fitness", "hiit", "health"],
+      video:
+        "https://res.cloudinary.com/ds1njqypu/video/upload/v1761720410/Download_1_vwffrl.mp4",
     },
     stats: {
       likes: "3.9K",
