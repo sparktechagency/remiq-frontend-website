@@ -1,28 +1,5 @@
 const posts = [
   {
-    id: "16",
-    user: {
-      username: "streetvibes",
-      avatar: `https://picsum.photos/seed/${Math.random()}/200`,
-      isFollowing: false,
-    },
-    content: {
-      title: "Urban Energy",
-      description:
-        "The rhythm of the city captured in motion — pure street vibes and hustle energy.",
-      hashtags: ["street", "citylife", "motion"],
-      video:
-        "https://res.cloudinary.com/ds1njqypu/video/upload/v1761391133/Download_oa8t0p.mp4",
-    },
-    stats: {
-      likes: "4.4K",
-      comments: "720",
-      bookmarks: "2.3K",
-      shares: "340",
-    },
-  },
-
-  {
     id: "7",
     user: {
       username: "fitnessguru",
@@ -42,6 +19,28 @@ const posts = [
       comments: "864",
       bookmarks: "2.2K",
       shares: "321",
+    },
+  },
+  {
+    id: "16",
+    user: {
+      username: "streetvibes",
+      avatar: `https://picsum.photos/seed/${Math.random()}/200`,
+      isFollowing: false,
+    },
+    content: {
+      title: "Urban Energy",
+      description:
+        "The rhythm of the city captured in motion — pure street vibes and hustle energy.",
+      hashtags: ["street", "citylife", "motion"],
+      video:
+        "https://res.cloudinary.com/ds1njqypu/video/upload/v1761391133/Download_oa8t0p.mp4",
+    },
+    stats: {
+      likes: "4.4K",
+      comments: "720",
+      bookmarks: "2.3K",
+      shares: "340",
     },
   },
   {
